@@ -1,0 +1,94 @@
+/* *{border: 1px solid red;} */
+
+#wrap{
+    width: 1280px;
+    height: 930px;
+    margin: 0 auto;
+    display: flex;
+    /*폰트 추가*/
+}
+
+#menu{
+
+    width: 230px;
+    height: 100%;
+    margin-top: 0px;
+    text-align: start;
+    background-color: #0571d3;
+}
+
+ul > #title{
+    font-weight: bold;
+    font-size: 45px;
+    color: white;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+
+li{
+    border-bottom: 1px solid white;
+    margin-bottom: 55px;
+    font-size: 35px;
+    margin-left: -31px;
+    width: 210px;
+    list-style: none;
+}
+
+#content{
+    width: 980px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+input{
+    width: 450px;
+    height: 45px;
+    margin-bottom: 20px;
+    border-radius: 3% 3%;
+    border: 2px solid black;
+}
+#change{
+    margin-top: 10px;
+}
+.inBtn , .changeBtn{
+    width: 100px;
+    height: 47px;
+    border-radius: 10% 10% ;
+    border: none;
+    background-color: #0571d3;
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    margin-left: 10px;
+}
+
+table{
+    width: 950px;
+    height: 80px;
+    margin-top: 3%;
+    text-align: center;
+    padding: 0 auto;
+    border-collapse: collapse;
+}
+th{
+    border: 2px solid black;
+}
+th, td{
+    width: 500px;
+    height: 47px;
+}
+
+.btn{
+    height: 40px;
+    width: 70px;
+    border-radius: 10% 10%;
+    border: none;
+    background-color: #0571d3;
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+}
