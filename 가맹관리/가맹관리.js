@@ -85,6 +85,7 @@ function changeFunc(i){
 // changeFunc undefined 해결하기
 // change수정함수 완성하기
 // 시간있으면 -> table 스크롤바 만들기
+// 시간있으면 -> 수정정보입력시 input의 value가 null 이면 현재 정보 그대로 table에 출력하기
 
 
 // 메뉴 li에 각 페이지 링크 연결하기
