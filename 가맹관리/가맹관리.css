@@ -76,16 +76,15 @@ input{
 
 table{
     width: 950px;
-    height: 80px;
     margin-top: 3%;
     text-align: center;
     padding: 0 auto;
     border-collapse: collapse;
-
+    display: block;
 }
-
-th{
-    border: 2px solid black;
+thead{
+    background-color: #0571d3;
+    color: white;
 }
 th, td{
     width: 500px;
@@ -101,4 +100,13 @@ th, td{
     color: white;
     font-weight: bold;
     margin-left: 10px;
+}
+
+#output{
+    width: 975px;
+    height: 350px;
+    max-height: 570px;
+    overflow-x:hidden;
+    overflow-y: scroll;
+    position: relative;
 }
