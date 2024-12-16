@@ -1,5 +1,6 @@
 body{
     width: 1680px;
+    box-sizing: border-box;
 }
 #wrap{
     width: 100%;
@@ -9,7 +10,7 @@ body{
 }
 
 *{
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 #menu{
