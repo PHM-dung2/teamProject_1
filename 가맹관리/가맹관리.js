@@ -43,7 +43,7 @@ function outFunc(){
                     <td>${info.adress}</td>
                     <td>${info.businessNum}</td>
                     <td>
-                        <button onclick="changeFunc(${info.no})" class="btn" type="button">수정</button>
+                        <button onclick="changeOutFunc(${info.no})" class="btn" type="button">수정</button>
                         <button onclick="deleteFunc(${info.no})" class="btn" type="button">삭제</button>
                     </td>
                 </tr>` 
@@ -66,14 +66,24 @@ function deleteFunc(i){
 
 
 // table수정 클릭 시
-function changeFunc(i){
-    
-    let title = document.querySelector('#information');
+function changeOutFunc(i){
+    console.log(i);
+    let title = document.querySelector('#change');
     let html;
     for(let j = 0 ; j < sampleArr.length ; j++){
         let info = sampleArr[j]
         if(sampleArr[j].no == i){
-            html += `<h3>${info.name} ${info.adress} ${info.businessNum} 님의 정보 수정</h3>`;
+            html += `<h3>${info.name} ${info.adress} ${info.businessNum} 님의 정보 수정</h3>
+                    <div id="information">
+                            
+                        </div>
+                        
+                        <input class="chName" type="text" placeholder="점주명"/>
+                        <br/>
+                        <input class="chAdress" type="text" placeholder="지점 주소"/>
+                        <br/>
+                        <input class="chBusinessNum" type="text" placeholder="사업자 번호"/>
+                        <button onclick="changeFunc(${info.no})" class="changeBtn" type="button">가맹수정</button>`;
         }
     }
 
@@ -82,30 +92,28 @@ function changeFunc(i){
     return;
 
 }
+
+// 가맹정보 수정 함수
+function changeFunc(i){
+    let changeN = document.querySelector('.chName').value;
+    let changeA = document.querySelector('.chAdress').value;
+    let changeB = document.querySelector('.chBusinessNum').value;
+
+    for(let j = 0 ; j < sampleArr.length ; j++){
+        let info = sampleArr[j]
+        if(sampleArr[j].no == i){
+            
+            info.name = changeN;
+            console.log(info.name);
+            info.adress = changeA;        
+            info.businessNum = changeB;
+        }
+    }
+    outFunc();
+}
 // changeFunc undefined 해결하기
-// change수정함수 완성하기
 // 시간있으면 -> table 스크롤바 만들기
 // 시간있으면 -> 수정정보입력시 input의 value가 null 이면 현재 정보 그대로 table에 출력하기
 
 
 // 메뉴 li에 각 페이지 링크 연결하기
-
-
-/*
-function changeFunc(info){
-    for(let j = 0 ; j < sampleArr.length ; j++){
-        if(sampleArr[j].no == info.no){
-            let chName = document.querySelector('chName').value;
-            let chAdress = document.querySelector('chAdress').value;
-            let chBusinessNum = document.querySelector('chBusinessNum').value;
-            
-            info.name = chName;
-            info.adress = chAdress;
-            info.businessNum = chBusinessNum;
-
-            console.lof(name);
-        }
-    }
-    changeOutFunc()
-}
-*/
