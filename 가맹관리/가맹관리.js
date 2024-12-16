@@ -1,19 +1,19 @@
 let sampleArr =[
-    {no : 1, name : "김도하", adress : "인천시 부평구" ,businessNum : 12341234},
-    {no : 2, name : "김도하", adress : "인천시 부평구" ,businessNum : 12341234},
-    {no : 3, name : "김도하", adress : "인천시 부평구" ,businessNum : 12341234}
+    {no : 1, name : "김도하", address : "인천시 부평구" ,businessNum : 12341234},
+    {no : 2, name : "김도하", address : "인천시 부평구" ,businessNum : 12341234},
+    {no : 3, name : "김도하", address : "인천시 부평구" ,businessNum : 12341234}
 ];
 let sno = 4;
 
 function inFunc(){
     let name = document.querySelector('.name').value;
-    let adress = document.querySelector('.adress').value;
+    let address = document.querySelector('.address').value;
     let businessNum = document.querySelector('.businessNum').value;
 
     let sample ={
         no : sno,
         name : name,
-        adress :adress,
+        address :address,
         businessNum : businessNum
     };
     sno++;
@@ -22,7 +22,7 @@ function inFunc(){
     console.log(sampleArr);
 
     document.querySelector('.name').value = ``;
-    document.querySelector('.adress').value = ``;
+    document.querySelector('.address').value = ``;
     document.querySelector('.businessNum').value = ``;
 
     outFunc();
@@ -41,7 +41,7 @@ function outFunc(){
                     <tr>
                         <td >${info.no}</td>
                         <td>${info.name}</td>
-                        <td>${info.adress}</td>
+                        <td>${info.address}</td>
                         <td>${info.businessNum}</td>
                         <td>
                             <button onclick="changeOutFunc(${info.no})" class="btn" type="button">수정</button>
@@ -76,10 +76,10 @@ function changeOutFunc(i){
         let info = sampleArr[j]
         if(sampleArr[j].no == i){
 
-            html += `<h3>${info.name} ${info.adress} ${info.businessNum} 님의 정보 수정</h3>
+            html += `<h3>${info.name} ${info.address} ${info.businessNum} 님의 정보 수정</h3>
                         <input class="chName" type="text" placeholder="점주명"/>
                         <br/>
-                        <input class="chAdress" type="text" placeholder="지점 주소"/>
+                        <input class="chAddress" type="text" placeholder="지점 주소"/>
                         <br/>
                         <input class="chBusinessNum" type="text" placeholder="사업자 번호"/>
                         <button onclick="changeFunc(${info.no})" class="changeBtn" type="button">가맹수정</button>`;
@@ -95,7 +95,7 @@ function changeOutFunc(i){
 // 가맹정보 수정 함수
 function changeFunc(i){
     let changeN = document.querySelector('.chName').value;
-    let changeA = document.querySelector('.chAdress').value;
+    let changeA = document.querySelector('.chAddress').value;
     let changeB = document.querySelector('.chBusinessNum').value;
 
     for(let j = 0 ; j < sampleArr.length ; j++){
@@ -104,7 +104,7 @@ function changeFunc(i){
             
             info.name = changeN;
             console.log(info.name);
-            info.adress = changeA;        
+            info.address = changeA;        
             info.businessNum = changeB;
         }
     }
