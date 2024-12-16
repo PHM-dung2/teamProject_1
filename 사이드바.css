@@ -7,21 +7,20 @@ body{
     margin: 0 auto;
     font-family: '맑은고딕';
 }
-/*
+
 *{
     border: 1px solid red;
 }
-*/
-#menu{
 
+#menu{
     width: 230px;
     height: 100%;
     margin-top: 0px;
     text-align: start;
     background-color: #004aad;
 }
-#mene > ul{
-    width: 100%;
+#menu > ul{
+    width: 190px;
 }
 
 ul > #title{
