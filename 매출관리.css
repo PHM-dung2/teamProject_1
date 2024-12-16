@@ -1,0 +1,66 @@
+body{
+    width: 1680px;
+    box-sizing: border-box;
+}
+#wrap{
+    width: 100%;
+    height: 930px;
+    margin: 0 auto;
+    font-family: '맑은고딕';
+    display: flex;
+}
+
+*{
+    /* border: 1px solid red; */
+}
+/* =========== 사이드바 =========== */
+#menu{
+    width: 230px;
+    height: 100%;
+    margin-top: 0px;
+    text-align: start;
+    background-color: #004aad;
+}
+#menu > ul{
+    width: 190px;
+}
+ul > #title{
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+li{
+    border-bottom: 1px solid white;
+    padding : 15px;
+    font-size: 20px;
+    margin-left: -42px;
+    list-style: none;
+}
+#menu > ul > li > a:hover{ color: #36b2fc;}
+
+/* =========== 테이블 ==========*/
+#selectBox select{
+    height: 47px; width: 100px; 
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 20px;
+}  
+#outputBox{ margin : 50px 245px}
+#outputBox th, td{ height: 47px; width: 150px;}
+#outputBox table{ width: 950px; border-collapse: collapse;}
+#saleTable thead{ background-color: #0571d3; color : white;}
+#saleTable .tableBtn{ width: 175px;}
+#saleTable button{ 
+    height: 40px;
+    width: 70px;
+    border-radius: 10px;
+    border: none;
+    background-color: #0571d3;
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+}
