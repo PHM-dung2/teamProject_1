@@ -48,7 +48,7 @@ li{
     margin:  0 auto;
     margin-left: 300px;
     margin-right: 50px;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 50px;
 }
 
@@ -63,7 +63,7 @@ input{
     margin-top: 10px;
 }
 .inBtn , .changeBtn{
-    width: 100px;
+    width: 150px;
     height: 47px;
     border-radius: 10% 10% ;
     border: none;
@@ -87,7 +87,6 @@ thead{
     color: white;
 }
 th, td{
-    width: 500px;
     height: 47px;
 }
 
@@ -104,7 +103,7 @@ th, td{
 
 #output{
     width: 975px;
-    height: 350px;
+    height: 300px;
     max-height: 570px;
     overflow-x:hidden;
     overflow-y: scroll;

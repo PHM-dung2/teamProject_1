@@ -1,7 +1,7 @@
 let sampleArr =[
     {no : 1, name : "김도하", address : "인천시 부평구" ,businessNum : 12341234},
-    {no : 2, name : "김도하", address : "인천시 부평구" ,businessNum : 12341234},
-    {no : 3, name : "김도하", address : "인천시 부평구" ,businessNum : 12341234}
+    {no : 2, name : "김레하", address : "인천시 부평구" ,businessNum : 12341234},
+    {no : 3, name : "김미하", address : "인천시 부평구" ,businessNum : 12341234}
 ];
 let sno = 4;
 
@@ -77,17 +77,20 @@ function changeOutFunc(i){
         if(sampleArr[j].no == i){
 
             html += `<h3>${info.name} ${info.address} ${info.businessNum} 님의 정보 수정</h3>
-                        <input class="chName" type="text" placeholder="점주명"/>
-                        <br/>
-                        <input class="chAddress" type="text" placeholder="지점 주소"/>
-                        <br/>
-                        <input class="chBusinessNum" type="text" placeholder="사업자 번호"/>
-                        <button onclick="changeFunc(${info.no})" class="changeBtn" type="button">가맹수정</button>`;
+                    <input class="chName" type="text" placeholder="점주명"/>
+                    <input class="chBusinessNum" type="text" placeholder="사업자 번호"/>
+                    <br/>
+                    <input type="text" id="sample6_postcode2" placeholder="우편번호">
+                    <input class="inBtn" style="width: 150px;" type="button" onclick="sample6_execDaumPostcode2()" value="우편번호 찾기"><br>
+                    <input class="chAddress" type="text" id="sample6_address2" placeholder="주소">
+                    <input type="text" id="sample6_detailAddress2" placeholder="상세주소">
+                    
+                    <button onclick="changeFunc(${info.no})" class="changeBtn" type="button">가맹수정</button>`;
         }
     }
 
     title.innerHTML = html;
-
+    document.querySelector('#change') = ``;
     return;
 
 }
@@ -106,6 +109,7 @@ function changeFunc(i){
             console.log(info.name);
             info.address = changeA;        
             info.businessNum = changeB;
+            
         }
     }
     outFunc();
@@ -116,3 +120,4 @@ function changeFunc(i){
 
 
 // 메뉴 li에 각 페이지 링크 연결하기
+
