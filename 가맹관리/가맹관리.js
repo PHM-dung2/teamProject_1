@@ -37,16 +37,18 @@ function outFunc(){
     for(let i = 0; i < sampleArr.length ; i++){
         let info = sampleArr[i];
 
-        html += `<tr>
-                    <td >${info.no}</td>
-                    <td>${info.name}</td>
-                    <td>${info.adress}</td>
-                    <td>${info.businessNum}</td>
-                    <td>
-                        <button onclick="changeOutFunc(${info.no})" class="btn" type="button">수정</button>
-                        <button onclick="deleteFunc(${info.no})" class="btn" type="button">삭제</button>
-                    </td>
-                </tr>` 
+        html += `
+                    <tr>
+                        <td >${info.no}</td>
+                        <td>${info.name}</td>
+                        <td>${info.adress}</td>
+                        <td>${info.businessNum}</td>
+                        <td>
+                            <button onclick="changeOutFunc(${info.no})" class="btn" type="button">수정</button>
+                            <button onclick="deleteFunc(${info.no})" class="btn" type="button">삭제</button>
+                        </td>
+                    </tr>
+                ` 
     };
 
     tbody.innerHTML = html;
@@ -69,15 +71,12 @@ function deleteFunc(i){
 function changeOutFunc(i){
     console.log(i);
     let title = document.querySelector('#change');
-    let html;
+    let html =``;
     for(let j = 0 ; j < sampleArr.length ; j++){
         let info = sampleArr[j]
         if(sampleArr[j].no == i){
+
             html += `<h3>${info.name} ${info.adress} ${info.businessNum} 님의 정보 수정</h3>
-                    <div id="information">
-                            
-                        </div>
-                        
                         <input class="chName" type="text" placeholder="점주명"/>
                         <br/>
                         <input class="chAdress" type="text" placeholder="지점 주소"/>
