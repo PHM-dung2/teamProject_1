@@ -1,10 +1,11 @@
-/* *{border: 1px solid red;} */
-
+/**{border: 1px solid red;}*/ 
+body{width: 1280px;}
 #wrap{
     width: 1280px;
     height: 930px;
     margin: 0 auto;
     display: flex;
+    font-family: '맑은고딕';
     /*폰트 추가*/
 }
 
@@ -37,8 +38,10 @@ li{
 }
 
 #content{
+
     width: 980px;
-    margin-left: 50px;
+    margin:  0 auto;
+    margin-left: 300px;
     margin-right: 50px;
     margin-top: 50px;
     margin-bottom: 50px;
