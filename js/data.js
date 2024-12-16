@@ -14,3 +14,17 @@ function saleList(){
     return saleList;
     
 } // f end
+
+function sampleList(){
+    let sampleList = localStorage.getItem('sampleArr');
+    if(sampleList = null){
+        sampleList =[
+            {no : 1, name : "김도하", address : "인천시 부평구" ,businessNum : 12341234},
+            {no : 2, name : "김레하", address : "인천시 부평구" ,businessNum : 12341234},
+            {no : 3, name : "김미하", address : "인천시 부평구" ,businessNum : 12341234}
+        ];
+    }else{
+        sampleList =JSON.parse(sampleList)
+    }
+    return sampleList;
+}

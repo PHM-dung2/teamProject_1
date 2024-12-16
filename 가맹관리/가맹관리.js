@@ -1,14 +1,20 @@
-let sampleArr =[
+
+/*let sampleArr =[
     {no : 1, name : "김도하", address : "인천시 부평구" ,businessNum : 12341234},
     {no : 2, name : "김레하", address : "인천시 부평구" ,businessNum : 12341234},
     {no : 3, name : "김미하", address : "인천시 부평구" ,businessNum : 12341234}
 ];
 let sno = 4;
+*/
 
 function inFunc(){
     let name = document.querySelector('.name').value;
     let address = document.querySelector('.address').value;
     let businessNum = document.querySelector('.businessNum').value;
+
+    let sampleArr = sampleList;
+
+    let sno = sampleList.length!= 0 ? sampleArr[sampleList.length -1].no +1 : 1
 
     let sample ={
         no : sno,
@@ -16,7 +22,7 @@ function inFunc(){
         address :address,
         businessNum : businessNum
     };
-    sno++;
+    // sno++;
 
     sampleArr.push(sample);
     console.log(sampleArr);
@@ -121,3 +127,4 @@ function changeFunc(i){
 
 // 메뉴 li에 각 페이지 링크 연결하기
 
+// 
