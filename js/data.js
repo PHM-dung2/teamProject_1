@@ -58,14 +58,3 @@ function sampleList(){
 function setSample(sampleArr){
     localStorage.setItem('sampleArr', JSON.stringify(sampleArr))
 }
-/*
-function getSample(no){
-    let sampleArr = sampleList();
-
-    for (let i = 0; i < sampleArr.length -1 ; i++){
-        if(sampleArr[i].no == no){
-            return sampleArr[i]
-        }
-    }
-    return null;
-}*/

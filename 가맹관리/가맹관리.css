@@ -55,7 +55,7 @@ li{
 input{
     width: 450px;
     height: 45px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border-radius: 3% 3%;
     border: 2px solid black;
 }
@@ -72,6 +72,7 @@ input{
     font-weight: bold;
     font-size: 17px;
     margin-left: 10px;
+ 
 }
 
 table{
@@ -103,8 +104,8 @@ th, td{
 
 #output{
     width: 975px;
-    height: 300px;
-    margin-top: 15px;
+    height: 290px;
+    margin-top: 35px;
     max-height: 570px;
     overflow-x:hidden;
     overflow-y: scroll;

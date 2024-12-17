@@ -86,7 +86,8 @@ function deleteFunc(i){
             break;
         }
     }
-    
+    setSample(sampleArr);
+
     return outFunc();    
 }
 
@@ -102,10 +103,11 @@ function changeOutFunc(i){
     for(let j = 0 ; j < sampleArr.length ; j++){
         let info = sampleArr[j]
         if(sampleArr[j].no == i){
-
+// input 사이즈 조절
             html += `<h3>${info.name} ${info.sName} ${info.address} ${info.businessNum} 님의 정보 수정</h3>
-                    <input class="chName" type="text" placeholder="점주명"/>
-                    <input class="chBusinessNum" type="text" placeholder="사업자 번호"/>
+                    <input class="chName" style="width: 295px; type="text" placeholder="점주명"/>
+                    <input class="chSName" style="width: 295px;" type="text" placeholder="지점명"/>
+                    <input class="chBusinessNum" style="width: 295px; type="text" placeholder="사업자 번호"/>
                     <br/>
                     <input type="text" id="sample6_postcode2" placeholder="우편번호">
                     <input class="inBtn" style="width: 150px;" type="button" onclick="sample6_execDaumPostcode2()" value="우편번호 찾기"><br>
@@ -118,8 +120,7 @@ function changeOutFunc(i){
 
     title.innerHTML = html;
     // document.querySelector('#change') = ``;
-    return;
-
+    
 }
 
 // 가맹정보 수정 함수
@@ -143,6 +144,7 @@ function changeFunc(i){
             
         }
     }
+    setSample(sampleArr);
     outFunc();
 }
 // changeFunc undefined 해결하기 v 
