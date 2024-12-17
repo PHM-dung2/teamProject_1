@@ -10,17 +10,23 @@
                 <li id="title">메뉴</li>
                 <li><a href="#">관리자등록</a></li>
                 <li><a href="#">가맹관리</a></li>
-                <li><a href="#">매출관리</a></li>
+                <li><a href="#" style="color: #36b2fc;">매출관리</a></li>
             </ul>
         </div>
-
+        
         <div id="content">
+            <div id="logIn">
+                <div>김도하 님</div>
+                <button type="button">로그아웃</button>
+            </div>
+
             <div id="outputBox">
+                <h2>매출관리</h2>
                 <div id="selectBox">
                     <select onchange="changeSelect(this.value)">
-                        <option value="sDay">일</option>
-                        <option value="sMonth">월</option>
                         <option value="sYear">년도</option>
+                        <option value="sMonth">월</option>
+                        <option value="sDay">일</option>
                     </select>
                 </div>
                 <table id="saleTable" border="1">
@@ -36,61 +42,7 @@
                         </tr>
                     </thead>
                     <tbody class="tableList">
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td class="tableBtn">
-                                <button type="button">수정</button>
-                                <button type="button">삭제</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td class="tableBtn">
-                                <button type="button">수정</button>
-                                <button type="button">삭제</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td class="tableBtn">
-                                <button type="button">수정</button>
-                                <button type="button">삭제</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td class="tableBtn">
-                                <button type="button">수정</button>
-                                <button type="button">삭제</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td class="tableBtn">
-                                <button type="button">수정</button>
-                                <button type="button">삭제</button>
-                            </td>
-                        </tr>
+                        
                     </tbody>
                 </table>
             </div>

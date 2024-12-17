@@ -13,7 +13,7 @@ function saleList(){
             { sno : 7 , type : 1 , date : "2024-11-15" , count : 2 , pno : 2 , no : 2 },
             { sno : 8 , type : 2 , date : "2024-11-14" , count : 5 , pno : 3 , no : 3 },
             { sno : 9 , type : 1 , date : "2024-11-15" , count : 3 , pno : 2 , no : 2 },
-            { sno : 10 , type : 0 , date : "2024-11-14" , count : 10 , pno : 3 , no : 3 }
+            { sno : 10 , type : 0 , date : "2024-11-14" , count : 10 , pno : 3 , no : 1 }
         ];
     }else{
         saleList = JSON.parse( saleList );

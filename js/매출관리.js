@@ -1,3 +1,5 @@
+document.querySelectorAll("select option")[2].selected = true;
+
 // 셀렉트 박스에 선택된 값을 넘겨주기
 function changeSelect(str){
     if(str == "sDay"){ listFunc(); }
@@ -17,6 +19,9 @@ function listFunc(){
     let saleArray = saleList();
     let sampleArray = sampleList();
     let productArray = productList();
+    saleArray.sort(function(a,b) {
+        return a.no - b.no || new Date(b.date) - new Date(a.date);
+    });
     let html = ``;
     for( let i = 0 ; i < saleArray.length ; i++){
         let info1 = saleArray[i];
@@ -51,7 +56,7 @@ function listFunc(){
                     <td>${ info1.date }</td>
                     <td>${ pName }</td>
                     <td>${ info1.count }</td>
-                    <td>${ price * info1.count }</td>
+                    <td>${ (price * info1.count).toLocaleString('ko-KR') }</td>
                     <td class="tableBtn">
                         <button type="button">수정</button>
                         <button type="button">삭제</button>
@@ -70,79 +75,106 @@ function monthListFunc(){
     let nowYear = date.getFullYear();
     let html = ``;
 
-    for( let year = 2000 ; year <= nowYear ; year++ ){
-        for( let month = 1 ; month <= 12 ; month++ ){
+    for( let year = nowYear ; year >= nowYear-5 ; year-- ){
+        for( let month = 12 ; month >= 1 ; month-- ){
             let sName = '';
             let pName = '';
             let price = 0;
             let count = 0;
             
-            for( let j = 1 ; j <= sampleArray.length ; j++ ){
-                let sample = sampleArray[j];
-                if( sample.no == j ){
-                    for( let k = 1 ; k <= productArray.length ; k++ ){
+            for( let j = 0 ; j < sampleArray.length ; j++ ){
+                for( let k = 0 ; k < productArray.length ; k++ ){
+                    for( let i = 0 ; i < saleArray.length ; i++ ){
+                        let sale = saleArray[i];
+                        let day = sale.date.split(`-`);
+                        let sample = sampleArray[j];
                         let product = productArray[k];
-                        if( product.pno = k ){
-                            for( let i = 0 ; i < saleArray.length ; i++ ){
-                                console.log( price );
-                                let sale = saleArray[i];   
-                                let date = sale.date.split('-');
-                                if( date[0] == year && date[1] == month ){
-                                    sName = sample.sName;
-                                    pName = product.pName;
-                                    if( info1.type == 0 || info1.type == 2 ){ count -= info1.count; }
-                                    else if( info1.type == 1 ){ count += info1.count; }
-                                    price = product.price;
-                                } // if end
-                            } // for2 end
-                        }
-                        // 출력
-                        if( sName != ''){ 
-                            html += `<tr>
-                                        <td>${ sName }</td>
-                                        <td>${ year }년</td>
-                                        <td>${ month }월</td>
-                                        <td>${ pName }</td>
-                                        <td>${ count }</td>
-                                        <td>${ price * count }</td>
-                                        <td class="tableBtn">
-                                            <button type="button">수정</button>
-                                            <button type="button">삭제</button>
-                                        </td>
-                                    </tr>`;
+                        if( day[0] == year && day[1] == month && sample.no == sale.no && product.pno == sale.pno ){
+                            sName = sample.sName;
+                            pName = product.pName;
+                            price = product.price;
+                            if( sale.type == 0 || sale.type == 2 ){ count -= sale.count; }
+                            else if( sale.type == 1 ){ count += sale.count; }
+                        } // if end
+                    } // for end
+                    // 출력
+                    if( sName != ''){ 
+                        html += `<tr>
+                                    <td>${ sName }</td>
+                                    <td>${ year }년</td>
+                                    <td>${ month }월</td>
+                                    <td>${ pName }</td>
+                                    <td>${ count }</td>
+                                    <td>${ (price * count).toLocaleString('ko-KR') }</td>
+                                    <td class="tableBtn">
+                                        <button type="button">수정</button>
+                                        <button type="button">삭제</button>
+                                    </td>
+                                </tr>`;
                         sName = '';
                         pName = '';
                         price = 0;
                         count = 0;
-                        } // if end
-                    } // for end
-                } // if end
-            }
+                    } // if end
+                } // for end
+            } // for end    
         } // for1 end
-
     } // for end
     outputFunc(html)
 }
 
 // 년도별 리스트
 function yearListFunc(){
-    let html = `년도`;
-    outputFunc(html)
-}
+    let saleArray = saleList();
+    let sampleArray = sampleList();
+    let productArray = productList();
+    let date = new Date();
+    let nowYear = date.getFullYear();
+    let html = ``;
 
-// for( let j = 0 ; j < sampleArray.length ; j++ ){
-//     let info2 = sampleArray[j];
-//     if( info1.no == info2.no ) {
-//         sName = info2.sName;
-//         for( let j = 0 ; j < productArray.length ; j++ ){
-//             let info3 = productArray[j];
-//             if( info1.pno == info3.pno ){
-//                 pName = info3.pName;
-//                 if( info1.type == 0 || info1.type == 2 ){ count -= info1.count; }
-//                 else if( info1.type == 1 ){ count += info1.count; }
-//                 price = info3.price;
-//             } // if end
-//         } // for4 end
+    for( let year = nowYear ; year >= nowYear-5 ; year-- ){
+        let sName = '';
+        let pName = '';
+        let price = 0;
+        let count = 0;
         
-//     } // if end
-// } // for3 end  
+        for( let j = 0 ; j < sampleArray.length ; j++ ){
+            for( let k = 0 ; k < productArray.length ; k++ ){
+                for( let i = 0 ; i < saleArray.length ; i++ ){
+                    let sale = saleArray[i];
+                    let day = sale.date.split(`-`);
+                    let sample = sampleArray[j];
+                    let product = productArray[k];
+                    if( day[0] == year && sample.no == sale.no && product.pno == sale.pno ){
+                        sName = sample.sName;
+                        pName = product.pName;
+                        price = product.price;
+                        if( sale.type == 0 || sale.type == 2 ){ count -= sale.count; }
+                        else if( sale.type == 1 ){ count += sale.count; }
+                    } // if end
+                } // for end
+                // 출력
+                if( sName != ''){ 
+                    html += `<tr>
+                                <td>${ sName }</td>
+                                <td></td>
+                                <td>${ year }년</td>
+                                <td>${ pName }</td>
+                                <td>${ count }</td>
+                                <td>${ (price * count).toLocaleString('ko-KR') }</td>
+                                <td class="tableBtn">
+                                    <button type="button">수정</button>
+                                    <button type="button">삭제</button>
+                                </td>
+                            </tr>`;
+                    sName = '';
+                    pName = '';
+                    price = 0;
+                    count = 0;
+                } // if end
+            } // for end
+        } // for end    
+    } // for end
+    outputFunc(html)
+} // f end
+
