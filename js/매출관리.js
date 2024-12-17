@@ -21,13 +21,13 @@ function listFunc(){
             let info2 = sampleArray[j];
             if( info1.no == info2.no ) {
                 sName = info2.no;
-            }   
+            } // if end
         } // for2 end
         for( let j = 0 ; j < productArray.length ; j++ ){
             let info3 = productArray[j];
             if( info1.pno = info3.pno ){
-                price = info3.pno;
-            }
+                price = info3.price;
+            } // if end
         } // for 3 end
         html += `<tr>
                     <td>${ sName }</td>
