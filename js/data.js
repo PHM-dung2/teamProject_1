@@ -29,8 +29,8 @@ function productList(){
     if( productList == null ){
         productList = [
             { pno : 1 , pName : "호밀빵" , price : 1000 },
-            { pno : 1 , pName : "든든우유" , price : 2000 },
-            { pno : 1 , pName : "치즈케이크" , price : 3000 }
+            { pno : 2 , pName : "든든우유" , price : 2000 },
+            { pno : 3 , pName : "치즈케이크`" , price : 3000 }
         ];
     }else{
         productList = JSON.parse( productList );
