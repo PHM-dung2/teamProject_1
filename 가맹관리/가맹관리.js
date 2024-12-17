@@ -7,25 +7,31 @@
 let sno = 4;
 */
 
+
 function inFunc(){
     let name = document.querySelector('.name').value;
     let address = document.querySelector('.address').value;
     let businessNum = document.querySelector('.businessNum').value;
 
-    let sampleArr = sampleList;
+    let sampleList = sampleList();
+    console.log(sampleList);
 
-    let sno = sampleList.length!= 0 ? sampleArr[sampleList.length -1].no +1 : 1
+    let no = sampleList.length != 0 ? sampleList[sampleList.length -1].no  + 1 : 1;
 
     let sample ={
-        no : sno,
+        no : no,
         name : name,
         address :address,
         businessNum : businessNum
     };
     // sno++;
 
-    sampleArr.push(sample);
-    console.log(sampleArr);
+    sampleList.push(sample);
+    console.log(sampleList);
+
+    setSample.push(sampleList);
+    
+    alert('가맹정보 등록 성공');
 
     document.querySelector('.name').value = ``;
     document.querySelector('.address').value = ``;
@@ -37,11 +43,14 @@ function inFunc(){
 
 outFunc();
 function outFunc(){
+
+    let sampleList = sampleList();
+
     let tbody = document.querySelector('table > tbody');
     let html = ``;
 
-    for(let i = 0; i < sampleArr.length ; i++){
-        let info = sampleArr[i];
+    for(let i = 0; i < sampleList.length ; i++){
+        let info = sampleList[i];
 
         html += `
                     <tr>
@@ -63,9 +72,9 @@ function outFunc(){
 }
 
 function deleteFunc(i){
-    for(let j = 0 ; j < sampleArr.length ; j++){
-        if(sampleArr[j].no == i){
-            sampleArr.splice(j, 1);
+    for(let j = 0 ; j < sampleList.length ; j++){
+        if(sampleList[j].no == i){
+            sampleList.splice(j, 1);
         }
     }
 
@@ -78,9 +87,9 @@ function changeOutFunc(i){
     console.log(i);
     let title = document.querySelector('#change');
     let html =``;
-    for(let j = 0 ; j < sampleArr.length ; j++){
-        let info = sampleArr[j]
-        if(sampleArr[j].no == i){
+    for(let j = 0 ; j < sampleList.length ; j++){
+        let info = sampleList[j]
+        if(sampleList[j].no == i){
 
             html += `<h3>${info.name} ${info.address} ${info.businessNum} 님의 정보 수정</h3>
                     <input class="chName" type="text" placeholder="점주명"/>
@@ -107,9 +116,9 @@ function changeFunc(i){
     let changeA = document.querySelector('.chAddress').value;
     let changeB = document.querySelector('.chBusinessNum').value;
 
-    for(let j = 0 ; j < sampleArr.length ; j++){
-        let info = sampleArr[j]
-        if(sampleArr[j].no == i){
+    for(let j = 0 ; j < sampleList.length ; j++){
+        let info = sampleList[j]
+        if(sampleList[j].no == i){
             
             info.name = changeN;
             console.log(info.name);
