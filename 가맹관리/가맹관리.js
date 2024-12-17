@@ -10,6 +10,7 @@ let sno = 4;
 
 function inFunc(){
     let name = document.querySelector('.name').value;
+    let sName = document.querySelector('.sName').value;
     let address = document.querySelector('.address').value;
     let businessNum = document.querySelector('.businessNum').value;
 
@@ -22,6 +23,7 @@ function inFunc(){
     let sample ={
         no : no,
         name : name,
+        sName : sName,
         address :address,
         businessNum : businessNum
     };
@@ -35,6 +37,7 @@ function inFunc(){
     alert('가맹정보 등록 성공');
 
     document.querySelector('.name').value = ``;
+    document.querySelector('.sName').value = ``;
     document.querySelector('.address').value = ``;
     document.querySelector('.businessNum').value = ``;
 
@@ -57,6 +60,7 @@ function outFunc(){
                     <tr>
                         <td >${info.no}</td>
                         <td>${info.name}</td>
+                        <td>${info.sName}</td>
                         <td>${info.address}</td>
                         <td>${info.businessNum}</td>
                         <td>
@@ -72,16 +76,17 @@ function outFunc(){
     return;
 }
 
-function deleteFunc(){
+function deleteFunc(i){
     let sampleArr = sampleList();
 
-    for(let j = 0 ; j < sampleArr.length ; j++){
-        if(sampleArr[j].no == i){
+    for(let j = 0; j < sampleArr.length ; j++){
+        let info = sampleArr[j];
+        if(info.no == i){
             sampleArr.splice(j, 1);
             break;
         }
     }
-
+    
     return outFunc();    
 }
 
@@ -98,7 +103,7 @@ function changeOutFunc(i){
         let info = sampleArr[j]
         if(sampleArr[j].no == i){
 
-            html += `<h3>${info.name} ${info.address} ${info.businessNum} 님의 정보 수정</h3>
+            html += `<h3>${info.name} ${info.sName} ${info.address} ${info.businessNum} 님의 정보 수정</h3>
                     <input class="chName" type="text" placeholder="점주명"/>
                     <input class="chBusinessNum" type="text" placeholder="사업자 번호"/>
                     <br/>
@@ -122,6 +127,7 @@ function changeFunc(i){
     let sampleArr = sampleList();
 
     let changeN = document.querySelector('.chName').value;
+    let changeS = document.querySelector('.chSName').value;
     let changeA = document.querySelector('.chAddress').value;
     let changeB = document.querySelector('.chBusinessNum').value;
 
@@ -131,6 +137,7 @@ function changeFunc(i){
         if(sampleArr[j].no == i){
             
             info.name = changeN;
+            info.sName = changeS;
             info.address = changeA;        
             info.businessNum = changeB;
             
