@@ -42,7 +42,7 @@ function productList(){
 // 관리자정보 리스트
 function sampleList(){
     let sampleList = localStorage.getItem('sampleList');
-    if( sampleList = null ){
+    if( sampleList == null ){
         sampleList = [
             { no : 1, name : "김도하", sName : "부평점" , address : "인천시 부평구" ,businessNum : 12341234 },
             { no : 2, name : "김레하", sName : "백운점" , address : "인천시 부평구" ,businessNum : 12341234 },
