@@ -10,27 +10,37 @@ function outputFunc(){
 function listFunc(){
     let saleArray = saleList();
     let sampleArray = sampleList();
+    let productArray = productList();
     let tableList = document.querySelector('.tableList')
     let html = ``;
     for( let i = 0 ; i < saleArray.length ; i++){
         let info1 = saleArray[i];
         let info2 = sampleArray[i];
+        let info3 = productArray[i];
         let sName = '';
-        if( info1.no == info2.no ) {
-            sName = info2.no
-        }   
+        let price = '';
+        for( let j = 0 ; j < sampleArray.length ; j++ ){
+            if( info1.no == info2.no ) {
+                sName = info2.no
+            }   
+        } // for2 end
+        for( let j = 0 ; j < productArray.length ; j++ ){
+            if( info1.pno = info3.pno ){
+                price = info3.pno
+            }
+        } // for 3 end
         html += `<tr>
                     <td>${ sName }</td>
                     <td>${ info1.type }</td>
                     <td>${ info1.date }</td>
                     <td>${ info1.count }</td>
-                    <td></td>
+                    <td>${ price }</td>
                     <td class="tableBtn">
                         <button type="button">수정</button>
                         <button type="button">삭제</button>
                     </td>
                 </tr>`
-    }
+    } // for1 end
     tableList.innerHTML = html;
 
 } // f end
