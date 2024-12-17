@@ -33,14 +33,14 @@ function sampleList(){
 function setSample(sampleList){
     localStorage.setItem('sampleList', JSON.stringify(sampleList))
 }
-
+/*
 function getSample(no){
-    let sampleList = sampleList();
+    let sampleArr = sampleList();
 
-    for (let i = 0; i < sampleList.length -1 ; i++){
-        if(sampleList[i].no == no){
-            return sampleList[i]
+    for (let i = 0; i < sampleArr.length -1 ; i++){
+        if(sampleArr[i].no == no){
+            return sampleArr[i]
         }
     }
     return null;
-}
+}*/

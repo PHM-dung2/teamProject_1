@@ -13,10 +13,11 @@ function inFunc(){
     let address = document.querySelector('.address').value;
     let businessNum = document.querySelector('.businessNum').value;
 
-    let sampleList = sampleList();
+    let sampleArr = sampleList();
     console.log(sampleList);
 
-    let no = sampleList.length != 0 ? sampleList[sampleList.length -1].no  + 1 : 1;
+    let no = sampleArr.length != 0 ? sampleArr[sampleArr.length -1].no  + 1 : 1;
+    console.log(no);
 
     let sample ={
         no : no,
@@ -26,10 +27,10 @@ function inFunc(){
     };
     // sno++;
 
-    sampleList.push(sample);
-    console.log(sampleList);
+    sampleArr.push(sample);
+    console.log(sampleArr);
 
-    setSample.push(sampleList);
+    setSample(sampleArr);
     
     alert('가맹정보 등록 성공');
 
@@ -44,13 +45,13 @@ function inFunc(){
 outFunc();
 function outFunc(){
 
-    let sampleList = sampleList();
+    let sampleArr = sampleList();
 
     let tbody = document.querySelector('table > tbody');
     let html = ``;
 
-    for(let i = 0; i < sampleList.length ; i++){
-        let info = sampleList[i];
+    for(let i = 0; i < sampleArr.length ; i++){
+        let info = sampleArr[i];
 
         html += `
                     <tr>
@@ -71,10 +72,13 @@ function outFunc(){
     return;
 }
 
-function deleteFunc(i){
-    for(let j = 0 ; j < sampleList.length ; j++){
-        if(sampleList[j].no == i){
-            sampleList.splice(j, 1);
+function deleteFunc(){
+    let sampleArr = sampleList();
+
+    for(let j = 0 ; j < sampleArr.length ; j++){
+        if(sampleArr[j].no == i){
+            sampleArr.splice(j, 1);
+            break;
         }
     }
 
@@ -85,11 +89,14 @@ function deleteFunc(i){
 // table수정 클릭 시
 function changeOutFunc(i){
     console.log(i);
+
+    let sampleArr = sampleList();
+    console.log(sampleArr);
     let title = document.querySelector('#change');
     let html =``;
-    for(let j = 0 ; j < sampleList.length ; j++){
-        let info = sampleList[j]
-        if(sampleList[j].no == i){
+    for(let j = 0 ; j < sampleArr.length ; j++){
+        let info = sampleArr[j]
+        if(sampleArr[j].no == i){
 
             html += `<h3>${info.name} ${info.address} ${info.businessNum} 님의 정보 수정</h3>
                     <input class="chName" type="text" placeholder="점주명"/>
@@ -105,23 +112,25 @@ function changeOutFunc(i){
     }
 
     title.innerHTML = html;
-    document.querySelector('#change') = ``;
+    // document.querySelector('#change') = ``;
     return;
 
 }
 
 // 가맹정보 수정 함수
 function changeFunc(i){
+    let sampleArr = sampleList();
+
     let changeN = document.querySelector('.chName').value;
     let changeA = document.querySelector('.chAddress').value;
     let changeB = document.querySelector('.chBusinessNum').value;
 
-    for(let j = 0 ; j < sampleList.length ; j++){
-        let info = sampleList[j]
-        if(sampleList[j].no == i){
+
+    for(let j = 0 ; j < sampleArr.length ; j++){
+        let info = sampleArr[j]
+        if(sampleArr[j].no == i){
             
             info.name = changeN;
-            console.log(info.name);
             info.address = changeA;        
             info.businessNum = changeB;
             
@@ -129,11 +138,11 @@ function changeFunc(i){
     }
     outFunc();
 }
-// changeFunc undefined 해결하기
-// 시간있으면 -> table 스크롤바 만들기
+// changeFunc undefined 해결하기 v 
+// 시간있으면 -> table 스크롤바 만들기 v
 // 시간있으면 -> 수정정보입력시 input의 value가 null 이면 현재 정보 그대로 table에 출력하기
 
 
 // 메뉴 li에 각 페이지 링크 연결하기
 
-// 
+// 삭제 수정 로컬 연결-> 저장된 객체 삭제 수정

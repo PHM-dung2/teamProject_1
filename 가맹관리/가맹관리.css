@@ -104,6 +104,7 @@ th, td{
 #output{
     width: 975px;
     height: 300px;
+    margin-top: 15px;
     max-height: 570px;
     overflow-x:hidden;
     overflow-y: scroll;
