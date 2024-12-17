@@ -15,18 +15,18 @@ function listFunc(){
     let html = ``;
     for( let i = 0 ; i < saleArray.length ; i++){
         let info1 = saleArray[i];
-        let info2 = sampleArray[i];
-        let info3 = productArray[i];
         let sName = '';
         let price = '';
         for( let j = 0 ; j < sampleArray.length ; j++ ){
+            let info2 = sampleArray[j];
             if( info1.no == info2.no ) {
-                sName = info2.no
+                sName = info2.no;
             }   
         } // for2 end
         for( let j = 0 ; j < productArray.length ; j++ ){
+            let info3 = productArray[j];
             if( info1.pno = info3.pno ){
-                price = info3.pno
+                price = info3.pno;
             }
         } // for 3 end
         html += `<tr>
