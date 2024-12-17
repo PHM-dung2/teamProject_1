@@ -10,13 +10,17 @@ function outputFunc(){
 function listFunc(){
     let saleArray = saleList();
     let sampleArray = sampleList();
-    let tableList = document.querySelector(".tableList")
+    let tableList = document.querySelector('.tableList')
     let html = ``;
     for( let i = 0 ; i < saleArray.length ; i++){
         let info1 = saleArray[i];
         let info2 = sampleArray[i];
+        let sName = '';
+        if( info1.no == info2.no ) {
+            sName = info2.no
+        }   
         html += `<tr>
-                    <td></td>
+                    <td>${ sName }</td>
                     <td>${ info1.type }</td>
                     <td>${ info1.date }</td>
                     <td>${ info1.count }</td>
