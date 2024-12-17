@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='매출관리.css'>
+    <link rel='stylesheet' href='매출관리.css'>
 </head>
 <body>
     <div id="wrap">
@@ -21,10 +17,10 @@
         <div id="content">
             <div id="outputBox">
                 <div id="selectBox">
-                    <select>
-                        <option>년도</option>
-                        <option>월</option>
-                        <option>일</option>
+                    <select onchange="changeSelect(this.value)">
+                        <option value="sDay">일</option>
+                        <option value="sMonth">월</option>
+                        <option value="sYear">년도</option>
                     </select>
                 </div>
                 <table id="saleTable" border="1">
@@ -33,6 +29,7 @@
                             <th>지점명</th>
                             <th>구분</th>
                             <th>날짜</th>
+                            <th>제품명</th>
                             <th>수량</th>
                             <th>매출액</th>
                             <th>관리</th>
