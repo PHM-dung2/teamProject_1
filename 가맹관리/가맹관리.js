@@ -119,8 +119,7 @@ function changeOutFunc(i){
     }
 
     title.innerHTML = html;
-    // document.querySelector('#change') = ``;
-    
+
 }
 
 // 가맹정보 수정 함수

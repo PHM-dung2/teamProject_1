@@ -57,7 +57,7 @@ input{
     height: 45px;
     margin-bottom: 10px;
     border-radius: 3% 3%;
-    border: 2px solid black;
+    border: 1px solid black;
 }
 #change{
     margin-top: 10px;
@@ -71,8 +71,7 @@ input{
     color: white;
     font-weight: bold;
     font-size: 17px;
-    margin-left: 10px;
- 
+    margin-left: 10px;    
 }
 
 table{
@@ -82,10 +81,12 @@ table{
     padding: 0 auto;
     border-collapse: collapse;
     display: block;
+
 }
 thead{
     background-color: #0571d3;
     color: white;
+    position: sticky;
 }
 th, td{
     height: 47px;

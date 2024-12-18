@@ -1,3 +1,4 @@
+//// 매출관리 data
 // 매출관리배열 불러오기 함수
 function saleList(){
 
@@ -39,6 +40,9 @@ function productList(){
     
 } // f end
 
+
+
+//// 가맹관리 data
 // 관리자정보 리스트
 function sampleList(){
     let sampleArr = localStorage.getItem('sampleArr');
