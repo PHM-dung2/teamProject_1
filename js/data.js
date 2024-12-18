@@ -9,7 +9,12 @@ function saleList(){
             { sno : 2 , type : 1 , date : "2024-12-15" , count : 2 , pno : 1 , no : 1 },
             { sno : 3 , type : 0 , date : "2024-12-14" , count : 5 , pno : 2 , no : 2 },
             { sno : 4 , type : 1 , date : "2024-12-15" , count : 3 , pno : 2 , no : 2 },
-            { sno : 5 , type : 0 , date : "2024-12-14" , count : 10 , pno : 3 , no : 3 }
+            { sno : 5 , type : 0 , date : "2024-12-14" , count : 10 , pno : 3 , no : 3 },
+            { sno : 6 , type : 2 , date : "2024-11-16" , count : 3 , pno : 1 , no : 1 },
+            { sno : 7 , type : 1 , date : "2024-11-15" , count : 2 , pno : 2 , no : 2 },
+            { sno : 8 , type : 2 , date : "2024-11-14" , count : 5 , pno : 3 , no : 3 },
+            { sno : 9 , type : 1 , date : "2024-11-15" , count : 3 , pno : 2 , no : 2 },
+            { sno : 10 , type : 0 , date : "2024-11-14" , count : 10 , pno : 3 , no : 1 }
         ];
     }else{
         saleList = JSON.parse( saleList );
@@ -31,7 +36,7 @@ function productList(){
         productList = [
             { pno : 1 , pName : "호밀빵" , price : 1000 },
             { pno : 2 , pName : "든든우유" , price : 2000 },
-            { pno : 3 , pName : "치즈케이크`" , price : 3000 }
+            { pno : 3 , pName : "치즈케이크" , price : 3000 }
         ];
     }else{
         productList = JSON.parse( productList );
