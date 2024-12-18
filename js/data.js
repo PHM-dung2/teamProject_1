@@ -1058,20 +1058,20 @@ function setSampleList( sampleList ){
     localStorage.setItem('sampleList', JSON.stringify( sampleList ) );
 } // f end
 
-// 페이징 함수
-function pagingFunc( value ){
-    let totalPage = Math.ceil(totalCount / limit)
+// // 페이징 함수
+// function pagingFunc( value ){
+//     let totalPage = Math.ceil(totalCount / limit)
 
-    let saleArray = saleList();
-    let totalCount = saleArray.length;
-    const limit = 10;
+//     let saleArray = saleList();
+//     let totalCount = saleArray.length;
+//     const limit = 10;
 
-    let html = '';
-    for( let i = 1 ; i <= totalPage ; i++ ){
+//     let html = '';
+//     for( let i = 1 ; i <= totalPage ; i++ ){
         
-    }
-}
+//     }
+// }
 
-function nextPageFunc(){
+// function nextPageFunc(){
     
-}
+// }
