@@ -1052,3 +1052,21 @@ function sampleList(){
     }
     return sampleList;
 }
+
+// 페이징 함수
+function pagingFunc( value ){
+    let totalPage = Math.ceil(totalCount / limit)
+
+    let saleArray = saleList();
+    let totalCount = saleArray.length;
+    const limit = 10;
+
+    let html = '';
+    for( let i = 1 ; i <= totalPage ; i++ ){
+        
+    }
+}
+
+function nextPageFunc(){
+    
+}
