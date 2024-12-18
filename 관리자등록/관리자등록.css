@@ -1,43 +1,94 @@
-body {
-  width: 1280px;
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+
+* {
+  /* border: 1px solid red; */
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
+
+body {
+  width: 1910px;
+  box-sizing: border-box;
+  background-color: #eeeeee;
+}
+
 #wrap {
   width: 100%;
-  height: 930px;
+  height: 911px;
   margin: 0 auto;
-  font-family: '맑은고딕';
+  font-family: 'NanumSquare';
   display: flex;
 }
 
-/* * {
-  border: 1px solid red;
-} */
-
+/* =========== 사이드바 =========== */
 #menu {
-  width: 230px;
+  width: 12%;
   height: 100%;
   margin-top: 0px;
   text-align: start;
-  background-color: #0571d3;
+  background-color: #00306e;
+}
+
+#menu > ul {
+  width: 100%;
 }
 
 ul > #title {
   font-weight: bold;
-  font-size: 45px;
+  font-size: 25px;
   color: white;
 }
+
 a {
   color: white;
   text-decoration: none;
 }
+
 li {
   border-bottom: 1px solid white;
-  margin-bottom: 55px;
-  font-size: 35px;
-  margin-left: -31px;
-  width: 210px;
+  padding: 15px;
+  font-size: 20px;
   list-style: none;
+  font-weight: bold;
 }
+
+#menu > ul > li > a:hover {
+  color: #36b2fc;
+}
+
+/* ========== 로그인 ========== */
+#logIn {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 75%;
+  height: 40px;
+  margin: 0 auto;
+}
+
+#logIn div {
+  margin-right: 10px;
+}
+
+#logIn button {
+  font-family: 'NanumSquare';
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 3px;
+  border: none;
+}
+
+#logIn button:hover {
+  font-family: 'NanumSquare';
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 3px;
+  border: none;
+  color: #36b2fc;
+}
+
+/* 사이드 바 끝 */
 
 /* 관리자 등록 전체 영역 */
 #AdminAllArea {
@@ -47,108 +98,111 @@ li {
   margin: 0 auto;
 }
 
-/* 관리자 로그인 영영 */
-.loginArea {
-  /* border: 1px solid blue; */
-  text-align: end;
-  margin: 50px;
-}
-
-/* 관리자 로그인 버튼 */
-.loginButton {
-  background-color: transparent;
-  border: none;
-}
-
 /* 관리자 타이틀 영역 */
 .adminTitleArea {
   text-align: center;
+  margin: 30px 0;
+}
+
+/* 관리자 타이틀 */
+.adminTitle {
+  font-size: 34px;
 }
 
 /* 관리자 인풋 전체 영역 */
-.adminInputArea {
-  /* border: 1px solid red; */
+.adminInBuArea {
   text-align: end;
-  margin: 40px 200px;
-  padding-right: 150px;
-  font-size: 30px;
+  margin-right: 500px;
+  padding-right: 130px;
+  font-size: 16px;
   height: 100%;
 }
 
 /* 관리자 아이디 영역 */
 .adminIdArea {
-  /* border: 1px solid pink; */
   padding: 15px 0;
 }
 
 /* 관리자 아이디 인풋 */
 .adminIdInput {
-  padding: 6px;
-  border-radius: 10px;
-  width: 300px;
-  height: 40px;
-  font-size: 20px;
+  padding: 10px;
+  border-radius: 25px;
+  width: 400px;
+  height: 50px;
+  font-size: 16px;
+  background-color: #75989941;
+  margin-left: 10px;
 }
 
 /* 관리자 패스워드 영역 */
 .AdminPasswordArea {
-  /* border: 1px solid pink; */
   padding: 15px 0;
 }
 
 /* 관리자 패스워드 인풋 */
 .adminPwInput {
-  padding: 6px;
-  border-radius: 10px;
-  width: 300px;
-  height: 40px;
-  font-size: 20px;
+  padding: 10px;
+  border-radius: 25px;
+  width: 400px;
+  height: 50px;
+  font-size: 16px;
+  background-color: #75989941;
+  margin-left: 10px;
 }
 
 /* 관리자 직급 영역 */
 .AdminRankArea {
-  /* border: 1px solid pink; */
   padding: 15px 0;
 }
 
 /* 관리자 직급 인풋 */
 .adminRkInput {
-  padding: 6px;
-  border-radius: 10px;
-  width: 300px;
-  height: 40px;
-  font-size: 20px;
+  padding: 10px;
+  border-radius: 25px;
+  width: 400px;
+  height: 50px;
+  font-size: 16px;
+  background-color: #75989941;
+  margin-left: 10px;
 }
 
 /* 관리자 이름 영역 */
 .AdminNameArea {
-  /* border: 1px solid pink; */
   padding: 15px 0;
 }
 
 /* 관리자 이름 인풋 */
 .adminNaInput {
-  padding: 6px;
-  border-radius: 10px;
-  width: 300px;
-  height: 40px;
-  font-size: 20px;
+  padding: 10px;
+  border-radius: 25px;
+  width: 400px;
+  height: 50px;
+  font-size: 16px;
+  background-color: #75989941;
+  margin-left: 10px;
 }
 
 /* 관리자 등록 버튼 영역 */
-.AdminButtonArea {
-  /* border: 1px solid pink; */
+.AdminBtnArea {
   padding: 15px 0;
 }
 
 /* 관리자 등록 버튼 */
-.adminButton {
-  background-color: #0571d3;
+.adminBtn {
+  background-color: #00306e;
+  border-color: #0571d3;
   color: white;
-  font-size: 20px;
-  width: 140px;
-  height: 40px;
-  padding: 6px;
-  border-radius: 10px;
+  border-radius: 25px;
+  font-size: 16px;
+  width: 200px;
+  height: 50px;
+  padding: 10px;
+}
+
+/* 관리자 등록 버튼 호버시 */
+.adminBtn:hover {
+  background-color: #36b2fc;
+  color: black;
+  cursor: pointer;
 }
 /* 관리자 등록 전체 영역 끝 */
