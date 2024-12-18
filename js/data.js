@@ -1053,6 +1053,11 @@ function sampleList(){
     return sampleList;
 }
 
+// 관리자정보 저장 함수
+function setSampleList( sampleList ){
+    localStorage.setItem('sampleList', JSON.stringify( sampleList ) );
+} // f end
+
 // 페이징 함수
 function pagingFunc( value ){
     let totalPage = Math.ceil(totalCount / limit)
