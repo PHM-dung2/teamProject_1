@@ -81,14 +81,17 @@ function monthListFunc(){
             let pName = '';
             let price = 0;
             let count = 0;
-            
+            // 관리자정보 배열 매칭
             for( let j = 0 ; j < sampleArray.length ; j++ ){
+                // 제품정보 배열 매칭
                 for( let k = 0 ; k < productArray.length ; k++ ){
+                    // 매출관리 배열 매칭
                     for( let i = 0 ; i < saleArray.length ; i++ ){
                         let sale = saleArray[i];
                         let day = sale.date.split(`-`);
                         let sample = sampleArray[j];
                         let product = productArray[k];
+                        // 년도/월/관리자번호/제품번호 매칭
                         if( day[0] == year && day[1] == month && sample.no == sale.no && product.pno == sale.pno ){
                             sName = sample.sName;
                             pName = product.pName;
@@ -178,3 +181,6 @@ function yearListFunc(){
     outputFunc(html)
 } // f end
 
+function updateFund(){
+    
+}

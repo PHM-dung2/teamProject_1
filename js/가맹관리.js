@@ -34,7 +34,7 @@ function inFunc(){
 
     setSample(sampleArr);
     
-    alert('가맹정보 등록 성공');
+    alert('새로운 가맹 정보가 등록되었습니다.');
 
     document.querySelector('.name').value = ``;
     document.querySelector('.sName').value = ``;
@@ -87,7 +87,7 @@ function deleteFunc(i){
         }
     }
     setSample(sampleArr);
-
+    alert("가맹정보가 삭제되었습니다.")
     return outFunc();    
 }
 
@@ -144,6 +144,8 @@ function changeFunc(i){
         }
     }
     setSample(sampleArr);
+    alert("가맹정보가 수정되었습니다.");
+
     outFunc();
 }
 // changeFunc undefined 해결하기 v 

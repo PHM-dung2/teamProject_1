@@ -11,10 +11,6 @@ body{
     display: flex;
 }
 
-/**{
-    border: 1px solid red;
-}
-*/
 #menu{
     width: 12%;
     height: 100%;
@@ -43,17 +39,26 @@ li{
     font-weight: bold;
 }
 #menu > ul > li > a:hover{ color: #36b2fc;}
-
+td{
+    width: 100px;
+}
 #content{
 
-    width: 980px;
-    margin:  0 auto;
+    width: 100%;
+    /* margin:  0 auto; */
+    /*
     margin-left: 300px;
     margin-right: 50px;
     margin-top: 30px;
     margin-bottom: 50px;
-}
+*/
+    }
 
+#main{
+    margin:  0 auto;
+    margin-top: 30px;
+    width: 1000px;
+}
 input{
     width: 450px;
     height: 45px;
@@ -77,41 +82,48 @@ input{
 }
 
 table{
-    width: 940px;
-    margin-top: 3%;
+    margin-top: 0px;
     text-align: center;
-    padding: 0 auto;
+    width: 100%;
     border-collapse: collapse;
-    display: block;
-    box-shadow: 3px 3px 5px #8d8d8d; 
+
+    
    
 }
 thead{
     background-color: #00306e; 
     color : white;
 }
+
 th, td{
-    height: 47px;
+    height: 65px;
 }
 
 .btn{
     height: 40px;
     width: 70px;
-    border-radius: 10% 10%;
+    border-radius: 10px;
     border: none;
     background-color: #00306e;
     color: white;
     font-weight: bold;
-    margin-left: 10px;
+
     box-shadow: 3px 3px 5px #8d8d8d;
 }
 
 #output{
-    width: 975px;
+    width: 1017px;
     height: 290px;
-    margin-top: 35px;
     max-height: 570px;
     overflow-x:hidden;
     overflow-y: scroll;
-    position: relative;
+    box-shadow: 3px 3px 5px #8d8d8d;
+}
+#point{
+    width: 8000px;
+    margin-top: 35px;
+
+}
+h3{
+    margin-bottom: 15px;
 }
