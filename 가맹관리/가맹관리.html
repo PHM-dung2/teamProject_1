@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Page Title</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='사이드바.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='가맹관리.css'>
 </head>
 <body>
@@ -14,8 +15,14 @@
                 <li><a href="#">매출관리</a></li>
             </ul>
         </div>
-    
         <div id="content">
+        <div id="logIn">
+            <div>김도하 님</div>
+            <button type="button">로그아웃</button>
+        </div>
+    
+    
+
             <div id="input">
                 <input class="name" style="width: 295px;" type="text" placeholder="점주명"/>
                 <input class="sName" style="width: 295px;" type="text" placeholder="지점명"/>
@@ -78,9 +85,9 @@
         </div>
 
     </div>
-
+    
     <script src="../js/data.js"></script>
-    <script src='가맹관리.js'></script>
+    <script src='../js/가맹관리.js'></script>
 
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
