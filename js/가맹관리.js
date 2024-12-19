@@ -1,3 +1,4 @@
+logInFunc( )
 
 /*let sampleArr =[
     {no : 1, name : "김도하", address : "인천시 부평구" ,businessNum : 12341234},
@@ -6,7 +7,6 @@
 ];
 let sno = 4;
 */
-
 
 function inFunc(){
     let name = document.querySelector('.name').value;

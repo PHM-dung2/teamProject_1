@@ -24,13 +24,11 @@ function registUser(){
     let adminList = sampleAdminList();
 
     // 3. 입력받은 정보와 기존의 관리자정보리스트 
-    let name;
     for( let index = 0 ; index <= adminList.length-1 ; index++ ){
         let user = adminList[index];
         if(user.id == userId && user.pw == userPassword){
             alert("로그인 완료");
             let loginAno = user.ano;
-            name = user.name;
             localStorage.setItem('loginAno',loginAno)
             //// +로그아웃 
             // localStorage.removeItem('loginAno');
