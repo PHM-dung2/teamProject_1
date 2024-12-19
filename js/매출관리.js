@@ -76,7 +76,7 @@ function monthListFunc(){
     let monthArray = monthList();
     
     for( let year = nowYear ; year >= nowYear-5 ; year-- ){
-        if( monthArray != [] ) { break; }
+        if( monthArray[0] != null ) { break; }
         for( let month = 12 ; month >= 1 ; month-- ){
             let sName = '';
             let pName = '';
@@ -156,7 +156,7 @@ function yearListFunc(){
         let pName = '';
         let price = 0;
         let count = 0;
-        if( yearArray != [] ){ break; }
+        if( yearArray[0] != null ){ break; }
         // 관리자정보 배열 매칭
         for( let j = 0 ; j < sampleArray.length ; j++ ){
             // 제품정보 배열 매칭
@@ -201,7 +201,7 @@ function yearListFunc(){
         html += `<tr>
                     <td>${ info.sName }</td>
                     <td></td>
-                    <td>${ info.year }월</td>
+                    <td>${ info.year }년</td>
                     <td>${ info.pName }</td>
                     <td>${ info.count }</td>
                     <td>${ info.price }</td>
@@ -332,7 +332,7 @@ function updateInputFunc( sno ){
     } // for end
     setSaleList( saleArray );
     listFunc();
-
+    resetList()
 } // f end
 
 function deleteFunc( sno ){
@@ -350,4 +350,5 @@ function deleteFunc( sno ){
     } // for end
     setSaleList( saleArray );
     listFunc();
+    resetList()
 }

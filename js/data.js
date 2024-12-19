@@ -1049,6 +1049,16 @@ function setYearList( yearList ){
     localStorage.setItem('yearList', JSON.stringify( yearList ) );
 } // f end
 
+// 배열 초기화
+function resetList(){
+    let monthArray = monthList();
+    let yearArray = yearList();
+    monthArray = null;
+    yearArray = null;
+    setMonthList();
+    setYearList();
+} // f end
+
 // 제품번호 샘플
 function productList(){
 
