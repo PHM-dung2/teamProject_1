@@ -3,6 +3,48 @@ function setSaleList( saleList ){
     localStorage.setItem('saleList', JSON.stringify( saleList ) );
 } // f end
 
+// 월별 필터된 배열 불러오기 함수
+function monthList(){
+    let monthList = localStorage.getItem('monthList');
+    if( monthList == null ){
+        monthList = [];
+    }else{
+        monthList = JSON.parse( monthList );
+    }
+    return monthList;
+}
+
+// 월별 필터된 배열 저장 함수
+function setMonthList( monthList ){
+    localStorage.setItem('monthList', JSON.stringify( monthList ) );
+} // f end
+
+// 년도별 필터된 배열 불러오기 함수
+function yearList(){
+    let yearList = localStorage.getItem('yearList');
+    if( yearList == null ){
+        yearList = [];
+    }else{
+        yearList = JSON.parse( yearList );
+    }
+    return yearList;
+}
+
+// 년도별 필터된 배열 저장 함수
+function setYearList( yearList ){
+    localStorage.setItem('yearList', JSON.stringify( yearList ) );
+} // f end
+
+// 배열 초기화
+function resetList(){
+    let monthArray = monthList();
+    let yearArray = yearList();
+    monthArray = [];
+    yearArray = [];
+    setMonthList( monthArray );
+    setYearList( yearArray );
+} // f end
+
 // 제품번호 샘플
 function productList(){
 
@@ -45,20 +87,25 @@ function setSample(sampleArr){
     localStorage.setItem('sampleArr', JSON.stringify(sampleArr))
 }
 
-// 페이징 함수
-function pagingFunc( value ){
-    let totalPage = Math.ceil(totalCount / limit)
+// 관리자정보 저장 함수
+function setSampleList( sampleList ){
+    localStorage.setItem('sampleList', JSON.stringify( sampleList ) );
+} // f end
 
-    let saleArray = saleList();
-    let totalCount = saleArray.length;
-    const limit = 10;
+// // 페이징 함수
+// function pagingFunc( value ){
+//     let totalPage = Math.ceil(totalCount / limit)
 
-    let html = '';
-    for( let i = 1 ; i <= totalPage ; i++ ){
+//     let saleArray = saleList();
+//     let totalCount = saleArray.length;
+//     const limit = 10;
+
+//     let html = '';
+//     for( let i = 1 ; i <= totalPage ; i++ ){
         
-    }
-}
+//     }
+// }
 
-function nextPageFunc(){
+// function nextPageFunc(){
     
-}
+// }
