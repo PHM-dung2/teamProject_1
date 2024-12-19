@@ -4,8 +4,8 @@
 
 #content{
     width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #main{
@@ -17,13 +17,11 @@
 
 .sName{ margin: 0px 11px; }
 .chSName{ margin: 0px 11px; }
-#sample6_postcode{ margin-right: 11px; }
 #sample6_address{ margin-right: 11px; }
-#sample6_postcode2{ margin-right: 11px; }
 #sample6_address2{ margin-right: 11px; }
 
 #main input{
-    width: 435px;
+    width: 430px;
     height: 45px;
     margin-bottom: 15px;
     border-radius: 7px;
@@ -41,7 +39,7 @@
     background-color: #00306e;
     color: white;
     font-weight: bold;
-    margin-bottom: 7px;
+    margin: 0px 0px 7px 11px;
     box-shadow: 3px 3px 5px #8d8d8d;
 }
 
@@ -82,6 +80,9 @@ th, td{
     overflow-y: scroll;
     box-shadow: 3px 3px 5px #8d8d8d;
 }
+
+#input{ margin-bottom: 10px;}
+
 #point{
     margin-top: 35px;
 }

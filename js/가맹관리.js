@@ -39,7 +39,9 @@ function inFunc(){
     document.querySelector('.name').value = ``;
     document.querySelector('.sName').value = ``;
     document.querySelector('.address').value = ``;
+    document.querySelector('#sample6_postcode').value = '';
     document.querySelector('.businessNum').value = ``;
+    document.querySelector('#sample6_detailAddress').value = '';
 
     outFunc();
     return;
@@ -77,6 +79,11 @@ function outFunc(){
 }
 
 function deleteFunc(i){
+    // Y/N 유효성검사
+    if(!confirm("삭제하시겠습니까?")){
+        return;
+    }
+
     let sampleArr = sampleList();
 
     for(let j = 0; j < sampleArr.length ; j++){
@@ -87,7 +94,6 @@ function deleteFunc(i){
         }
     }
     setSampleList(sampleArr);
-    alert("가맹정보가 삭제되었습니다.")
     return outFunc();    
 }
 
@@ -108,12 +114,10 @@ function changeOutFunc(i){
                     <input class="chName" style="width: 320px; type="text" placeholder="점주명"/>
                     <input class="chSName" style="width: 320px;" type="text" placeholder="지점명"/>
                     <input class="chBusinessNum" style="width: 320px; type="text" placeholder="사업자 번호"/>
-                    <br/>
                     <input type="text" id="sample6_postcode2" placeholder="우편번호">
                     <input class="inBtn" style="width: 150px;" type="button" onclick="sample6_execDaumPostcode2()" value="우편번호 찾기"><br>
                     <input class="chAddress" type="text" id="sample6_address2" placeholder="주소">
                     <input type="text" id="sample6_detailAddress2" placeholder="상세주소">
-                    
                     <button onclick="changeFunc(${info.no})" class="changeBtn" type="button">가맹수정</button>`;
         }
     }
@@ -124,6 +128,10 @@ function changeOutFunc(i){
 
 // 가맹정보 수정 함수
 function changeFunc(i){
+    // Y/N 유효성검사
+    if(!confirm("수정하시겠습니까?")){
+        return;
+    }
     let sampleArr = sampleList();
 
     let changeN = document.querySelector('.chName').value;
@@ -147,6 +155,13 @@ function changeFunc(i){
     alert("가맹정보가 수정되었습니다.");
 
     outFunc();
+
+    document.querySelector('.chName').value = '';
+    document.querySelector('.chSName').value = '';
+    document.querySelector('.chBusinessNum').value = '';
+    document.querySelector('#sample6_postcode2').value = '';
+    document.querySelector('.chAddress').value = '';
+    document.querySelector('#sample6_detailAddress2').value = '';
 }
 // 삭제 수정 로컬 연결-> 저장된 객체 삭제 수정// 삭제 수정 로컬 연결-> 저장된 객체 삭제 수정 v
 // changeFunc undefined 해결하기 v 

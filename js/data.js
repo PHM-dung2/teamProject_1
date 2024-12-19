@@ -1083,11 +1083,11 @@ function sampleList(){
     let sampleList = localStorage.getItem('sampleList');
     if( sampleList == null ){
         sampleList = [
-            { no : 1, name : "김도하", sName : "부평삼산점" , address : "인천시 부평구" ,businessNum : 111111111 },
-            { no : 2, name : "김레하", sName : "부개점" , address : "인천시 부평구" ,businessNum : 22222222 },
-            { no : 3, name : "김미하", sName : "계양구청점" , address : "인천시 계양구" ,businessNum : 33333333 },
-            { no : 4, name : "김파하", sName : "계산점" , address : "인천시 계양구" ,businessNum : 44444444 },
-            { no : 5, name : "김솔하", sName : "작전역점" , address : "인천시 계양구" ,businessNum : 55555555 }
+            { no : 1, name : "김도하", sName : "부평삼산점" , address : "인천시 부평구" , businessNum : 111111111 },
+            { no : 2, name : "김레하", sName : "부개점" , address : "인천시 부평구" , businessNum : 22222222 },
+            { no : 3, name : "김미하", sName : "계양구청점" , address : "인천시 계양구" , businessNum : 33333333 },
+            { no : 4, name : "김파하", sName : "계산점" , address : "인천시 계양구" , businessNum : 44444444 },
+            { no : 5, name : "김솔하", sName : "작전역점" , address : "인천시 계양구" , businessNum : 55555555 }
         ];
     }else{
         sampleList =JSON.parse(sampleList)
