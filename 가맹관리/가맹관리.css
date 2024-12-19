@@ -112,7 +112,7 @@ th, td{
 }
 
 #output{
-    width: 1017px;
+    width: 1000px;
     height: 290px;
     max-height: 570px;
     overflow-x:hidden;
@@ -120,7 +120,6 @@ th, td{
     box-shadow: 3px 3px 5px #8d8d8d;
 }
 #point{
-    width: 8000px;
     margin-top: 35px;
 
 }
