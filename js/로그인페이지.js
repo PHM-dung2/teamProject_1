@@ -24,13 +24,14 @@ function registUser(){
     let adminList = sampleAdminList();
 
     // 3. 입력받은 정보와 기존의 관리자정보리스트 
+    let name;
     for( let index = 0 ; index <= adminList.length-1 ; index++ ){
         let user = adminList[index];
         if(user.id == userId && user.pw == userPassword){
             alert("로그인 완료");
             let loginAno = user.ano;
-            localStorage.setItem('loginAno',JSON.stringify(loginAno))
-            
+            name = user.name;
+            localStorage.setItem('loginAno',loginAno)
             //// +로그아웃 
             // localStorage.removeItem('loginAno');
             location.href="./가맹관리/가맹관리.html"; // JS에서 제공하는 페이지 이동 함수. location.href="이동하고싶은HTML파일경로"

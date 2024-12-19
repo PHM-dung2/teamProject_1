@@ -1116,9 +1116,21 @@ function setSampleList( sampleList ){
     localStorage.setItem('sampleList', JSON.stringify( sampleList ) );
 } // f end
 
-// 로그인바 함수
-function logInFunc(){
-    
+// 로그인 함수
+function logInFunc( ){
+    let ano = localStorage.getItem( 'loginAno' );
+    let adminArray = sampleAdminList();
+    let name;
+    // 우상단 로그인바 이름 호출
+    for( let i = 0 ; i < adminArray.length ; i++ ){
+        let info = adminArray[i];
+        if( info.ano == ano ){ name = info.name; }
+    }
+
+    // 출력
+    let html = `<div>${ name } 님</div>
+                <button onclick="logOutFunc()" type="button">로그아웃</button>`;
+    document.querySelector('#logIn').innerHTML = html;
 }
 
 // 로그아웃 함수
@@ -1126,8 +1138,10 @@ function logOutFunc(){
     if( !confirm("로그아웃 하시겠습니까?") ){
         return;
     }
-    html = ``;
-    document.querySelector('#logIn').innerHTML = html;
+    let ano = localStorage.getItem( 'loginAno' );
+    ano = '';
+    localStorage.setItem('loginAno', ano);
+    location.href="../index.html";
 } // f end
 
 
