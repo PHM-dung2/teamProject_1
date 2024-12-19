@@ -14,6 +14,26 @@
 }
 */
 
+// 로그인 아닐시 이동 제한
+limitLocation();
+function limitLocation(){
+    let ano = localStorage.getItem( 'loginAno' );
+    if( ano == '' || ano == null ){
+        html = `<ul>
+                    <li id="title" >메뉴</li>
+                    <li><a onclick="limitAlert()">관리자등록</a></li>
+                    <li><a onclick="limitAlert()">가맹관리</a></li>
+                    <li><a onclick="limitAlert()">매출관리</a></li>
+                </ul>`
+        document.querySelector('#menu').innerHTML = html;
+    }
+
+}
+
+function limitAlert(){
+    alert("로그인 후 이용해 주세요.")
+}
+
 function registUser(){
     
     // 1. 로그인창에서 입력받은 아이디와 비밀번호 
