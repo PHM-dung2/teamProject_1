@@ -47,6 +47,7 @@ li{
 #menu > ul > li > a:hover{ color: #36b2fc;}
 
 /* ========== 로그인 ========== */
+
 #logIn{ 
     display: flex; justify-content: right; align-items: center;
     width: 75%; height: 40px;
