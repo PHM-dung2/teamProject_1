@@ -1034,19 +1034,19 @@ function setMonthList( monthList ){
 } // f end
 
 // 년도별 필터된 배열 불러오기 함수
-function monthList(){
-    let monthList = localStorage.getItem('monthList');
-    if( monthList == null ){
-        monthList = [];
+function yearList(){
+    let yearList = localStorage.getItem('yearList');
+    if( yearList == null ){
+        yearList = [];
     }else{
-        monthList = JSON.parse( monthList );
+        yearList = JSON.parse( yearList );
     }
-    return monthList;
+    return yearList;
 }
 
 // 년도별 필터된 배열 저장 함수
-function setSaleList( saleList ){
-    localStorage.setItem('saleList', JSON.stringify( saleList ) );
+function setYearList( yearList ){
+    localStorage.setItem('yearList', JSON.stringify( yearList ) );
 } // f end
 
 // 제품번호 샘플

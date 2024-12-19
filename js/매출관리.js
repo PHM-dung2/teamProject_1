@@ -76,6 +76,7 @@ function monthListFunc(){
     let monthArray = monthList();
     
     for( let year = nowYear ; year >= nowYear-5 ; year-- ){
+        if( monthArray != [] ) { break; }
         for( let month = 12 ; month >= 1 ; month-- ){
             let sName = '';
             let pName = '';
@@ -125,7 +126,6 @@ function monthListFunc(){
     let html = ``;
     for( let i = 0 ; i < monthArray.length ; i++ ){
         let info = monthArray[i];
-        console.log(info)
         html += `<tr>
                     <td>${ info.sName }</td>
                     <td>${ info.year }년</td>
@@ -134,12 +134,11 @@ function monthListFunc(){
                     <td>${ info.count }</td>
                     <td>${ info.price }</td>
                     <td class="tableBtn">
-                        <button type="button">수정</button>
-                        <button type="button">삭제</button>
                     </td>
                 </tr>`;
     } // for end
     setMonthList( monthArray );
+
     outputFunc(html);
 }
 
@@ -150,14 +149,14 @@ function yearListFunc(){
     let productArray = productList();
     let date = new Date();
     let nowYear = date.getFullYear();
-    let html = ``;
+    let yearArray = yearList();
 
     for( let year = nowYear ; year >= nowYear-5 ; year-- ){
         let sName = '';
         let pName = '';
         let price = 0;
         let count = 0;
-        
+        if( yearArray != [] ){ break; }
         // 관리자정보 배열 매칭
         for( let j = 0 ; j < sampleArray.length ; j++ ){
             // 제품정보 배열 매칭
@@ -176,20 +175,17 @@ function yearListFunc(){
                         else if( sale.type == 1 ){ count += sale.count; }
                     } // if end
                 } // for end
+
                 // 출력
                 if( sName != ''){ 
-                    html += `<tr>
-                                <td>${ sName }</td>
-                                <td></td>
-                                <td>${ year }년</td>
-                                <td>${ pName }</td>
-                                <td>${ count }</td>
-                                <td>${ (price * count).toLocaleString('ko-KR') }</td>
-                                <td class="tableBtn">
-                                    <button type="button">수정</button>
-                                    <button type="button">삭제</button>
-                                </td>
-                            </tr>`;
+                    let board = {
+                        "sName" : sName ,
+                        "year" : year ,
+                        "pName" : pName ,
+                        "count" : count ,
+                        "price" : (price * count).toLocaleString('ko-KR')
+                    }
+                    yearArray.push( board );
                     sName = '';
                     pName = '';
                     price = 0;
@@ -198,7 +194,24 @@ function yearListFunc(){
             } // for end
         } // for end    
     } // for end
-    outputFunc(html)
+
+    let html = ``;
+    for( let i = 0 ; i < yearArray.length ; i++ ){
+        let info = yearArray[i];
+        html += `<tr>
+                    <td>${ info.sName }</td>
+                    <td></td>
+                    <td>${ info.year }월</td>
+                    <td>${ info.pName }</td>
+                    <td>${ info.count }</td>
+                    <td>${ info.price }</td>
+                    <td class="tableBtn">
+                    </td>
+                </tr>`;
+    } // for end
+    setYearList( yearArray );
+
+    outputFunc( html );
 } // f end
 
 // 수정 html 출력
