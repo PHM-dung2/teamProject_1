@@ -58,12 +58,12 @@ function outFunc(){
 
         html += `
                     <tr>
-                        <td >${info.no}</td>
-                        <td>${info.name}</td>
-                        <td>${info.sName}</td>
-                        <td>${info.address}</td>
-                        <td>${info.businessNum}</td>
-                        <td>
+                        <td style="width: 80px;">${info.no}</td>
+                        <td style="width: 100px;">${info.name}</td>
+                        <td style="width: 130px;">${info.sName}</td>
+                        <td style="width: 360px;">${info.address}</td>
+                        <td style="width: 130px;">${info.businessNum}</td>
+                        <td style="width: 174px;">
                             <button onclick="changeOutFunc(${info.no})" class="btn" type="button">수정</button>
                             <button onclick="deleteFunc(${info.no})" class="btn" type="button">삭제</button>
                         </td>
@@ -98,16 +98,16 @@ function changeOutFunc(i){
 
     let sampleArr = sampleList();
     console.log(sampleArr);
-    let title = document.querySelector('#change');
+    let title = document.querySelector('#input');
     let html =``;
     for(let j = 0 ; j < sampleArr.length ; j++){
         let info = sampleArr[j]
         if(sampleArr[j].no == i){
 // input 사이즈 조절
             html += `<h3>${info.name} ${info.sName} ${info.address} ${info.businessNum} 님의 정보 수정</h3>
-                    <input class="chName" style="width: 295px; type="text" placeholder="점주명"/>
-                    <input class="chSName" style="width: 295px;" type="text" placeholder="지점명"/>
-                    <input class="chBusinessNum" style="width: 295px; type="text" placeholder="사업자 번호"/>
+                    <input class="chName" style="width: 320px; type="text" placeholder="점주명"/>
+                    <input class="chSName" style="width: 320px;" type="text" placeholder="지점명"/>
+                    <input class="chBusinessNum" style="width: 320px; type="text" placeholder="사업자 번호"/>
                     <br/>
                     <input type="text" id="sample6_postcode2" placeholder="우편번호">
                     <input class="inBtn" style="width: 150px;" type="button" onclick="sample6_execDaumPostcode2()" value="우편번호 찾기"><br>
@@ -155,3 +155,17 @@ function changeFunc(i){
 
 
 // 메뉴 li에 각 페이지 링크 연결하기
+
+// 수정 html 출력
+function updatePrint(){
+    html = `<input class="chName" type="text" placeholder="점주명"/>
+            <input class="chSName" type="text" placeholder="지점명"/>
+            <input class="chBusinessNum" type="text" placeholder="사업자번호"/>
+            <br/>
+            <input type="text" id="sample6_postcode2" placeholder="우편번호">
+            <input class="inBtn" style="width: 150px;" type="button" onclick="sample6_execDaumPostcode2()" value="우편번호 찾기"><br>                        <input class="chAddress" type="text" id="sample6_address2" placeholder="주소">
+            <input type="text" id="sample6_detailAddress2" placeholder="상세주소">
+                
+            <button  class="changeBtn" type="button">가맹수정</button>`
+    document.querySelector('#input').innerHTML = html;
+}
