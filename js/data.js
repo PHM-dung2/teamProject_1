@@ -67,7 +67,7 @@ function productList(){
 
 
 //// 가맹관리 data
-// 관리자정보 리스트
+// 가맹점주 정보 리스트
 function sampleList(){
     let sampleArr = localStorage.getItem('sampleArr');
     if( sampleArr == null ){
