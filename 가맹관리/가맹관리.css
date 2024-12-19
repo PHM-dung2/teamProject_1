@@ -3,7 +3,8 @@ body{
     box-sizing: border-box;
     background-color: #eeeeee;
 }
-#wrap{
+#content{
+
     width: 100%;
     height: 911px;
     margin: 0 auto;
@@ -63,7 +64,9 @@ input{
     width: 450px;
     height: 45px;
     margin-bottom: 10px;
+    margin-bottom: 10px;
     border-radius: 3% 3%;
+    border: 1px solid black;
     border: 1px solid black;
 }
 #change{
@@ -73,19 +76,30 @@ input{
     height: 40px;
     width: 100px;
     border-radius: 10px;
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
     border: none;
+    background-color: #00306e;
     background-color: #00306e;
     color: white;
     font-weight: bold;
+    margin-bottom: 7px;
+    box-shadow: 3px 3px 5px #8d8d8d;
     margin-bottom: 7px;
     box-shadow: 3px 3px 5px #8d8d8d;
 }
 
 table{
     margin-top: 0px;
+    margin-top: 0px;
     text-align: center;
     width: 100%;
+    width: 100%;
     border-collapse: collapse;
+
+    
+   
 
     
    
@@ -93,9 +107,13 @@ table{
 thead{
     background-color: #00306e; 
     color : white;
+    background-color: #00306e; 
+    color : white;
 }
 
+
 th, td{
+    height: 65px;
     height: 65px;
 }
 
@@ -103,10 +121,14 @@ th, td{
     height: 40px;
     width: 70px;
     border-radius: 10px;
+    border-radius: 10px;
     border: none;
+    background-color: #00306e;
     background-color: #00306e;
     color: white;
     font-weight: bold;
+
+    box-shadow: 3px 3px 5px #8d8d8d;
 
     box-shadow: 3px 3px 5px #8d8d8d;
 }
