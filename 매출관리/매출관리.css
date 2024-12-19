@@ -48,17 +48,6 @@ li{
 }
 #menu > ul > li > a:hover{ color: #36b2fc;}
 
-/* ========== 로그인 ========== */
-#logIn{ 
-    display: flex; justify-content: right; align-items: center;
-    width: 100%; height: 40px;
-}
-#logIn div{ margin-right: 10px;}
-#logIn button{ 
-    font-family: "NanumSquare"; font-weight: bold; font-size: 15px;
-    margin-top: 3px;
-}
-
 /* =========== 테이블 ==========*/
 #content{ margin: 0 auto; width: 75%;}
 #selectBox select{
