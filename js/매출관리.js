@@ -141,8 +141,11 @@ function yearListFunc(){
         let price = 0;
         let count = 0;
         
+        // 관리자정보 배열 매칭
         for( let j = 0 ; j < sampleArray.length ; j++ ){
+            // 제품정보 배열 매칭
             for( let k = 0 ; k < productArray.length ; k++ ){
+                // 매출관리 배열 매칭
                 for( let i = 0 ; i < saleArray.length ; i++ ){
                     let sale = saleArray[i];
                     let day = sale.date.split(`-`);
@@ -181,7 +184,7 @@ function yearListFunc(){
     outputFunc(html)
 } // f end
 
-// 수정 출력
+// 수정 html 출력
 function updateFunc( sno ){
     
     let saleArray = saleList();
@@ -190,7 +193,10 @@ function updateFunc( sno ){
     saleArray.sort(function(a,b) {
         return a.no - b.no || new Date(b.date) - new Date(a.date);
     });
+
     let html = ``;
+    let s1 = 0;
+    let s2 = 0;
     for( let i = 0 ; i < saleArray.length ; i++){
         let info1 = saleArray[i];
         let sName = '';
@@ -219,29 +225,31 @@ function updateFunc( sno ){
 
         // 출력
         if( info1.sno == sno ){
+            s1 = info1.type;
+            s2 = info1.pno;
             html += `<tr>
                         <td>${ sName }</td>
                         <td>
-                            <select>
-                                <option>구매</option>
-                                <option>판매</option>
-                                <option>환불</option>
+                            <select id="selectBox1" name="selectBox1">
+                                <option value="0" ${s1 === 0 ? 'selected' : ''}>구매</option>
+                                <option value="1" ${s1 === 1 ? 'selected' : ''}>판매</option>
+                                <option value="2" ${s1 === 2 ? 'selected' : ''}>환불</option>
                             </select>
                         </td>
-                        <td><input type="date" value="${ info1.date }"/></td>
+                        <td><input id="sDate" type="date" value="${ info1.date }"/></td>
                         <td>
-                            <select>
-                                <option>호밀빵</option>
-                                <option>든든우유</option>
-                                <option>치즈케이크</option>
-                                <option>마카롱</option>
-                                <option>메론빵</option>
+                            <select id="selectBox2" name="selectBox2">
+                                <option value="1" ${s2 === 1 ? 'selected' : ''}>호밀빵</option>
+                                <option value="2" ${s2 === 2 ? 'selected' : ''}>든든우유</option>
+                                <option value="3" ${s2 === 3 ? 'selected' : ''}>치즈케이크</option>
+                                <option value="4" ${s2 === 4 ? 'selected' : ''}>마카롱</option>
+                                <option value="5" ${s2 === 5 ? 'selected' : ''}>메론빵</option>
                             </select>
                         </td>
-                        <td><input type="text" value="${ info1.count }"/></td>
+                        <td><input id="sCount" type="text" value="${ info1.count }"/></td>
                         <td>${ (price * info1.count).toLocaleString('ko-KR') }</td>
                         <td class="tableBtn">
-                            <button onclick="updateFunc(${ sno })" type="button">완료</button>
+                            <button onclick="updateInputFunc(${ sno })" type="button">완료</button>
                             <button onclick="listFunc()" type="button">취소</button>
                         </td>
                     </tr>` 
@@ -263,15 +271,38 @@ function updateFunc( sno ){
     } // for1 end
     outputFunc(html);
 
-    // if(!confirm("수정하시겠습니까?")){
-    //     return;
-    // }
-    // for( let i = 0 ; i < saleArray.length ; i++ ){
-    //     let info = saleArray[i];
-        
-    // } // for end
     
-    // listFunc();
+} // f end
+
+function updateInputFunc( sno ){
+    let saleArray = saleList();
+    if(!confirm("수정하시겠습니까?")){
+        return;
+    }
+    let s1 = document.getElementById("selectBox1").selectedIndex;
+    let s2 = document.getElementById("selectBox2").selectedIndex + 1;
+    let date = document.querySelector('#sDate').value;
+    let count = document.querySelector('#sCount').value;
+
+    for( let i = 0 ; i < saleArray.length ; i++ ){
+        let info = saleArray[i];
+        if( info.sno == sno ){
+            board = {
+                "sno" : info.sno ,
+                "type" : s1 ,
+                "date" : date ,
+                "count" : count ,
+                "pno" : s2 ,
+                "no" : info.no
+            }
+            saleArray[i] = board;
+            break;
+        } // if end
+        
+    } // for end
+    setSaleList( saleArray );
+    listFunc();
+
 } // f end
 
 function deleteFunc( sno ){
