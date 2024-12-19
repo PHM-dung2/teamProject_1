@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' href='매출관리.css'>
+</head>
+<body>
+    <div id="wrap">
+        <div id="menu">
+            <ul>
+                <li id="title">메뉴</li>
+                <li><a href="#">관리자등록</a></li>
+                <li><a href="#">가맹관리</a></li>
+                <li><a href="#" style="color: #36b2fc;">매출관리</a></li>
+            </ul>
+        </div>
+        
+        <div id="content">
+            <div id="logIn">
+                <div>김도하 님</div>
+                <button onclick="logOutFunc()" type="button">로그아웃</button>
+            </div>
+
+            <div id="outputBox">
+                <h2>매출관리</h2>
+                <div id="selectBox">
+                    <select onchange="changeSelect(this.value)">
+                        <option value="sYear">년도</option>
+                        <option value="sMonth">월</option>
+                        <option value="sDay">일</option>
+                    </select>
+                </div>
+                <table id="saleTable" border="1">
+                    <thead>
+                        <tr>
+                            <th>지점명</th>
+                            <th>구분</th>
+                            <th>날짜</th>
+                            <th>제품명</th>
+                            <th>수량</th>
+                            <th>매출액</th>
+                            <th class="manage">관리</th>
+                        </tr>
+                    </thead>
+                </table>
+                <div id="scroll">
+                    <table id="saleTable" border="1">
+                        <tbody class="tableList">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- <div>
+                <button>이전</button>
+                <button>1</button>
+                <button>다음</button>
+            </div> -->
+        </div>
+        
+    </div>
+
+    <script src='./js/data.js'></script>
+    <script src='./js/매출관리.js'></script>
+
+</body>
+</html>

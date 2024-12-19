@@ -1,0 +1,105 @@
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+*{
+    /* border: 1px solid red; */
+    margin : 0px; padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    width: 1910px;
+    box-sizing: border-box;
+    background-color: #eeeeee;
+}
+#wrap{
+    width: 100%;
+    height: 911px;
+    margin: 0 auto;
+    font-family: 'NanumSquare';
+    display: flex;
+}
+
+/* =========== 사이드바 =========== */
+#menu{
+    width: 12%;
+    height: 100%;
+    margin-top: 0px;
+    text-align: start;
+    background-color: #00306e;
+}
+#menu > ul{
+    width: 100%;
+}
+ul > #title{
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+li{
+    border-bottom: 1px solid white;
+    padding : 15px;
+    font-size: 20px;
+    list-style: none;
+    font-weight: bold;
+}
+#menu > ul > li > a:hover{ color: #36b2fc;}
+
+/* ========== 로그인 ========== */
+#logIn{ 
+    display: flex; justify-content: right; align-items: center;
+    width: 100%; height: 40px;
+}
+#logIn div{ margin-right: 10px;}
+#logIn button{ 
+    font-family: "NanumSquare"; font-weight: bold; font-size: 15px;
+    margin-top: 3px;
+}
+
+/* =========== 테이블 ==========*/
+#content{ margin: 0 auto; width: 75%;}
+#selectBox select{
+    height: 40px; width: 100px; 
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+}
+
+#outputBox h2{ margin: 25px 0px; }
+#outputBox th, td{ height: 47px; width: 150px; text-align: center;}
+#outputBox table{ width: 100%; border-collapse: collapse; }
+
+#saleTable{  border-style: hidden;}
+#saleTable thead{ background-color: #00306e; color : white;}
+#saleTable .manage{ width: 203px;}
+#saleTable .tableBtn{ width: 190px;}
+#saleTable .tableBtn > button:active{ background-color: #004aad;}
+#saleTable button{ 
+    height: 40px;
+    width: 70px;
+    border-radius: 10px;
+    border: none;
+    background-color: #00306e;
+    color: white;
+    font-weight: bold;
+    margin: 0px 5px;
+    box-shadow: 3px 3px 5px #8d8d8d;
+}
+#scroll{
+    width: 100%;
+    height: 518px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    box-shadow: 3px 3px 5px #8d8d8d;
+}
+.tableList input, select{
+    width: 150px; border-radius: 5px;
+    background-color: #eeeeee;
+    text-align: center;
+    font-size: 17px;
+    font-family: "NanumSquare"
+}
+
+
