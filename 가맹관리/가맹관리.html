@@ -1,97 +1,97 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Page Title</title>
     <link rel='stylesheet' type='text/css' media='screen' href='사이드바.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='가맹관리.css'>
 </head>
+
 <body>
     <div id="wrap">
+        <div id="menu">
+            <ul>
+                <li id="title">메뉴</li>
+                <li><a href="../관리자등록/관리자등록.html">관리자등록</a></li>
+                <li><a href="">가맹관리</a></li>
+                <li><a href="../매출관리/매출관리.html">매출관리</a></li>
+            </ul>
+        </div>
         <div id="content">
-            <div id="menu">
-                <ul>
-                    <li id="title">메뉴</li>
-                    <li><a href="#">관리자등록</a></li>
-                    <li><a href="http://192.168.40.72:5500/%EA%B0%80%EB%A7%B9%EA%B4%80%EB%A6%AC/%EA%B0%80%EB%A7%B9%EA%B4%80%EB%A6%AC.html">가맹관리</a></li>
-                    <li><a href="#">매출관리</a></li>
-                </ul>
+            <div id="logIn">
+                <div>김도하 님</div>
+                <button type="button">로그아웃</button>
             </div>
 
-            <div id="cc">
-                <div id="logIn">
-                    <div>김도하 님</div>
-                    <button type="button">로그아웃</button>
+
+            <div id="main">
+                <div id="input">
+                    <input class="name" style="width: 295px;" type="text" placeholder="점주명" />
+                    <input class="sName" style="width: 295px;" type="text" placeholder="지점명" />
+                    <input class="businessNum" style="width: 295px;" type="text" placeholder="사업자번호" />
+                    <br />
+                    <input type="text" id="sample6_postcode" placeholder="우편번호">
+                    <input class="inBtn" style="width: 150px;" type="button" onclick="sample6_execDaumPostcode()"
+                        value="우편번호 찾기"><br>
+                    <input class="address" type="text" id="sample6_address" placeholder="주소">
+                    <input type="text" id="sample6_detailAddress" placeholder="상세주소">
+
+
+                    <button onclick="inFunc()" class="inBtn" type="button">가맹등록</button>
                 </div>
-                
-            
-                <div id="main">
-                    <div id="input">
-                        <input class="name" style="width: 295px;" type="text" placeholder="점주명"/>
-                        <input class="sName" style="width: 295px;" type="text" placeholder="지점명"/>
-                        <input class="businessNum" style="width: 295px;" type="text" placeholder="사업자번호"/>
-                        <br/>
-                        <input type="text" id="sample6_postcode" placeholder="우편번호">
-                        <input class="inBtn" style="width: 150px;" type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-                        <input class="address" type="text" id="sample6_address" placeholder="주소">
-                        <input type="text" id="sample6_detailAddress" placeholder="상세주소">
-                            
 
-                        <button onclick="inFunc()" class="inBtn" type="button">가맹등록</button>
-                    </div>
+                <hr />
 
-                    <hr/>
+                <div id="change">
+                    <input class="chName" style="width: 295px;" type="text" placeholder="점주명" />
+                    <input class="chSName" style="width: 295px;" type="text" placeholder="지점명" />
+                    <input class="chBusinessNum" style="width: 295px;" type="text" placeholder="사업자번호" />
+                    <br />
+                    <input type="text" id="sample6_postcode2" placeholder="우편번호">
+                    <input class="inBtn" style="width: 150px;" type="button" onclick="sample6_execDaumPostcode2()"
+                        value="우편번호 찾기"><br>
+                    <input class="chAddress" type="text" id="sample6_address2" placeholder="주소">
+                    <input type="text" id="sample6_detailAddress2" placeholder="상세주소">
 
-                    <div id="change">
-                        <input class="chName" style="width: 295px;" type="text" placeholder="점주명"/>
-                        <input class="chSName" style="width: 295px;" type="text" placeholder="지점명"/>
-                        <input class="chBusinessNum" style="width: 295px;" type="text" placeholder="사업자번호"/>
-                        <br/>
-                        <input type="text" id="sample6_postcode2" placeholder="우편번호">
-                        <input class="inBtn" style="width: 150px;" type="button" onclick="sample6_execDaumPostcode2()" value="우편번호 찾기"><br>                        <input class="chAddress" type="text" id="sample6_address2" placeholder="주소">
-                        <input type="text" id="sample6_detailAddress2" placeholder="상세주소">
+                    <button class="changeBtn" type="button">가맹수정</button>
 
-                            
-                        <button  class="changeBtn" type="button">가맹수정</button>
-                            
-                    </div>
+                </div>
+                <table border="1">
+                    <thead id="point">
+                        <tr>
+                            <th style="width: 210px;">가맹번호</th>
+                            <th style="width: 210px;">점주명</th>
+                            <th style="width: 210px;">지점명</th>
+                            <th style="width: 210px;">지점 주소</th>
+                            <th style="width: 210px;">사업자 번호</th>
+                            <th style="width: 210px;">가맹정보관리</th>
+                        </tr>
+                    </thead>
+                </table>
+
+                <div id="output">
                     <table border="1">
-                        <thead id="point">
+
+                        <tbody>
                             <tr>
-                                <th style="width: 200px;">가맹번호</th>
-                                <th style="width: 200px;">점주명</th>
-                                <th style="width: 200px;">지점명</th>
-                                <th style="width: 200px;">지점 주소</th>
-                                <th style="width: 200px;">사업자 번호</th>
-                                <th style="width: 223px;">가맹정보관리</th>
+                                <td>1</td>
+                                <td>김도하</td>
+                                <td>부평점</td>
+                                <td>인천 부평구</td>
+                                <td>1234-1234</td>
+                                <td>
+                                    <button class="btn" type="button">수정</button>
+                                    <button class="btn" type="button">삭제</button>
+                                </td>
                             </tr>
-                        </thead>
+                        </tbody>
                     </table>
+                </div>
 
-                    <div id="output">
-                        <table  border="1">
-
-                            <tbody>
-                                <tr>
-                                    <td >1</td>
-                                    <td >김도하</td>
-                                    <td >부평점</td>
-                                    <td >인천 부평구</td>
-                                    <td >1234-1234</td>
-                                    <td >
-                                        <button class="btn" type="button">수정</button>
-                                        <button class="btn" type="button">삭제</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-            </div>
             </div>
         </div>
     </div>
 
-    
-    
     <script src="../js/data.js"></script>
     <script src='../js/가맹관리.js'></script>
 
@@ -99,23 +99,23 @@
     <script>
         function sample6_execDaumPostcode() {
             new daum.Postcode({
-                oncomplete: function(data) {
+                oncomplete: function (data) {
                     // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-    
+
                     // 각 주소의 노출 규칙에 따라 주소를 조합한다.
                     // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
                     var addr = ''; // 주소 변수
                     var extraAddr = ''; // 참고항목 변수
-    
+
                     //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
                     if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
                         addr = data.roadAddress;
                     } else { // 사용자가 지번 주소를 선택했을 경우(J)
                         addr = data.jibunAddress;
                     }
-    
+
                     // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-                    
+
                     // 우편번호와 주소 정보를 해당 필드에 넣는다.
                     document.getElementById('sample6_postcode').value = data.zonecode;
                     document.getElementById("sample6_address").value = addr;
@@ -128,23 +128,23 @@
     <script>
         function sample6_execDaumPostcode2() {
             new daum.Postcode({
-                oncomplete: function(data) {
+                oncomplete: function (data) {
                     // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-    
+
                     // 각 주소의 노출 규칙에 따라 주소를 조합한다.
                     // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
                     var addr = ''; // 주소 변수
                     var extraAddr = ''; // 참고항목 변수
-    
+
                     //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
                     if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
                         addr = data.roadAddress;
                     } else { // 사용자가 지번 주소를 선택했을 경우(J)
                         addr = data.jibunAddress;
                     }
-    
+
                     // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-                    
+
                     // 우편번호와 주소 정보를 해당 필드에 넣는다.
                     document.getElementById('sample6_postcode2').value = data.zonecode;
                     document.getElementById("sample6_address2").value = addr;
@@ -155,4 +155,5 @@
         }
     </script>
 </body>
+
 </html>
