@@ -73,8 +73,8 @@ function monthListFunc(){
     let productArray = productList();
     let date = new Date();
     let nowYear = date.getFullYear();
-    let html = ``;
-
+    let monthArray = monthList();
+    
     for( let year = nowYear ; year >= nowYear-5 ; year-- ){
         for( let month = 12 ; month >= 1 ; month-- ){
             let sName = '';
@@ -100,20 +100,18 @@ function monthListFunc(){
                             else if( sale.type == 1 ){ count += sale.count; }
                         } // if end
                     } // for end
+                    
                     // 출력
                     if( sName != ''){ 
-                        html += `<tr>
-                                    <td>${ sName }</td>
-                                    <td>${ year }년</td>
-                                    <td>${ month }월</td>
-                                    <td>${ pName }</td>
-                                    <td>${ count }</td>
-                                    <td>${ (price * count).toLocaleString('ko-KR') }</td>
-                                    <td class="tableBtn">
-                                        <button type="button">수정</button>
-                                        <button type="button">삭제</button>
-                                    </td>
-                                </tr>`;
+                        let board = {
+                            "sName" : sName ,
+                            "year" : year ,
+                            "month" : month ,
+                            "pName" : pName ,
+                            "count" : count ,
+                            "price" : (price * count).toLocaleString('ko-KR')
+                        }
+                        monthArray.push( board );
                         sName = '';
                         pName = '';
                         price = 0;
@@ -123,7 +121,26 @@ function monthListFunc(){
             } // for end    
         } // for1 end
     } // for end
-    outputFunc(html)
+    
+    let html = ``;
+    for( let i = 0 ; i < monthArray.length ; i++ ){
+        let info = monthArray[i];
+        console.log(info)
+        html += `<tr>
+                    <td>${ info.sName }</td>
+                    <td>${ info.year }년</td>
+                    <td>${ info.month }월</td>
+                    <td>${ info.pName }</td>
+                    <td>${ info.count }</td>
+                    <td>${ info.price }</td>
+                    <td class="tableBtn">
+                        <button type="button">수정</button>
+                        <button type="button">삭제</button>
+                    </td>
+                </tr>`;
+    } // for end
+    setMonthList( monthArray );
+    outputFunc(html);
 }
 
 // 년도별 리스트
