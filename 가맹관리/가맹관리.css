@@ -14,12 +14,13 @@ td{
     width: 1000px;
     flex-wrap: wrap;
 }
-input{
+#main input{
     width: 450px;
     height: 45px;
     margin-bottom: 10px;
     border-radius: 3% 3%;
     border: 1px solid black;
+    padding-left: 10px;
 }
 #change{
     margin-top: 10px;
@@ -35,6 +36,9 @@ input{
     margin-bottom: 7px;
     box-shadow: 3px 3px 5px #8d8d8d;
 }
+
+.inBtn:active{ background-color: #004aad;}
+.changeBtn:active{ background-color: #004aad;}
 
 table{
     margin-top: 0px;
@@ -61,6 +65,8 @@ th, td{
     font-weight: bold;
     box-shadow: 3px 3px 5px #8d8d8d;
 }
+
+.btn:active{ background-color: #004aad;}
 
 #output{
     width: 1000px;

@@ -32,7 +32,7 @@ function inFunc(){
     sampleArr.push(sample);
     console.log(sampleArr);
 
-    setSample(sampleArr);
+    setSampleList(sampleArr);
     
     alert('새로운 가맹 정보가 등록되었습니다.');
 
@@ -86,7 +86,7 @@ function deleteFunc(i){
             break;
         }
     }
-    setSample(sampleArr);
+    setSampleList(sampleArr);
     alert("가맹정보가 삭제되었습니다.")
     return outFunc();    
 }
@@ -143,7 +143,7 @@ function changeFunc(i){
             
         }
     }
-    setSample(sampleArr);
+    setSampleList(sampleArr);
     alert("가맹정보가 수정되었습니다.");
 
     outFunc();
