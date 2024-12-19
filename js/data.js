@@ -39,7 +39,7 @@ function productList(){
     
 } // f end
 
-// 관리자정보 리스트
+// 점주정보 리스트
 function sampleList(){
     let sampleList = localStorage.getItem('sampleList');
     if( sampleList == null ){
