@@ -7,18 +7,23 @@
 let sno = 4;
 */
 
+
 function inFunc(){
     let name = document.querySelector('.name').value;
+    let sName = document.querySelector('.sName').value;
     let address = document.querySelector('.address').value;
     let businessNum = document.querySelector('.businessNum').value;
 
-    let sampleArr = sampleList;
+    let sampleArr = sampleList();
+    console.log(sampleList);
 
-    let sno = sampleList.length!= 0 ? sampleArr[sampleList.length -1].no +1 : 1
+    let no = sampleArr.length != 0 ? sampleArr[sampleArr.length -1].no  + 1 : 1;
+    console.log(no);
 
     let sample ={
-        no : sno,
+        no : no,
         name : name,
+        sName : sName,
         address :address,
         businessNum : businessNum
     };
@@ -27,7 +32,12 @@ function inFunc(){
     sampleArr.push(sample);
     console.log(sampleArr);
 
+    setSample(sampleArr);
+    
+    alert('새로운 가맹 정보가 등록되었습니다.');
+
     document.querySelector('.name').value = ``;
+    document.querySelector('.sName').value = ``;
     document.querySelector('.address').value = ``;
     document.querySelector('.businessNum').value = ``;
 
@@ -37,6 +47,9 @@ function inFunc(){
 
 outFunc();
 function outFunc(){
+
+    let sampleArr = sampleList();
+
     let tbody = document.querySelector('table > tbody');
     let html = ``;
 
@@ -47,6 +60,7 @@ function outFunc(){
                     <tr>
                         <td >${info.no}</td>
                         <td>${info.name}</td>
+                        <td>${info.sName}</td>
                         <td>${info.address}</td>
                         <td>${info.businessNum}</td>
                         <td>
@@ -63,12 +77,17 @@ function outFunc(){
 }
 
 function deleteFunc(i){
-    for(let j = 0 ; j < sampleArr.length ; j++){
-        if(sampleArr[j].no == i){
+    let sampleArr = sampleList();
+
+    for(let j = 0; j < sampleArr.length ; j++){
+        let info = sampleArr[j];
+        if(info.no == i){
             sampleArr.splice(j, 1);
+            break;
         }
     }
-
+    setSample(sampleArr);
+    alert("가맹정보가 삭제되었습니다.")
     return outFunc();    
 }
 
@@ -76,15 +95,19 @@ function deleteFunc(i){
 // table수정 클릭 시
 function changeOutFunc(i){
     console.log(i);
+
+    let sampleArr = sampleList();
+    console.log(sampleArr);
     let title = document.querySelector('#change');
     let html =``;
     for(let j = 0 ; j < sampleArr.length ; j++){
         let info = sampleArr[j]
         if(sampleArr[j].no == i){
-
-            html += `<h3>${info.name} ${info.address} ${info.businessNum} 님의 정보 수정</h3>
-                    <input class="chName" type="text" placeholder="점주명"/>
-                    <input class="chBusinessNum" type="text" placeholder="사업자 번호"/>
+// input 사이즈 조절
+            html += `<h3>${info.name} ${info.sName} ${info.address} ${info.businessNum} 님의 정보 수정</h3>
+                    <input class="chName" style="width: 295px; type="text" placeholder="점주명"/>
+                    <input class="chSName" style="width: 295px;" type="text" placeholder="지점명"/>
+                    <input class="chBusinessNum" style="width: 295px; type="text" placeholder="사업자 번호"/>
                     <br/>
                     <input type="text" id="sample6_postcode2" placeholder="우편번호">
                     <input class="inBtn" style="width: 150px;" type="button" onclick="sample6_execDaumPostcode2()" value="우편번호 찾기"><br>
@@ -96,35 +119,39 @@ function changeOutFunc(i){
     }
 
     title.innerHTML = html;
-    document.querySelector('#change') = ``;
-    return;
 
 }
 
 // 가맹정보 수정 함수
 function changeFunc(i){
+    let sampleArr = sampleList();
+
     let changeN = document.querySelector('.chName').value;
+    let changeS = document.querySelector('.chSName').value;
     let changeA = document.querySelector('.chAddress').value;
     let changeB = document.querySelector('.chBusinessNum').value;
+
 
     for(let j = 0 ; j < sampleArr.length ; j++){
         let info = sampleArr[j]
         if(sampleArr[j].no == i){
             
             info.name = changeN;
-            console.log(info.name);
+            info.sName = changeS;
             info.address = changeA;        
             info.businessNum = changeB;
             
         }
     }
+    setSample(sampleArr);
+    alert("가맹정보가 수정되었습니다.");
+
     outFunc();
 }
-// changeFunc undefined 해결하기
-// 시간있으면 -> table 스크롤바 만들기
+// 삭제 수정 로컬 연결-> 저장된 객체 삭제 수정// 삭제 수정 로컬 연결-> 저장된 객체 삭제 수정 v
+// changeFunc undefined 해결하기 v 
+// 시간있으면 -> table 스크롤바 만들기 v
 // 시간있으면 -> 수정정보입력시 input의 value가 null 이면 현재 정보 그대로 table에 출력하기
 
 
 // 메뉴 li에 각 페이지 링크 연결하기
-
-// 

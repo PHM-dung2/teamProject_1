@@ -1,0 +1,60 @@
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+*{
+   /*  border: 1px solid red;*/ 
+    margin : 0px; padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    width: 1910px;
+    box-sizing: border-box;
+    background-color: #eeeeee;
+}
+#wrap{
+    width: 100%;
+    height: 911px;
+    margin: 0 auto;
+    font-family: 'NanumSquare';
+    display: flex;
+}
+
+/* =========== 사이드바 =========== */
+#menu{
+    width: 12%;
+    height: 100%;
+    margin-top: 0px;
+    text-align: start;
+    background-color: #00306e;
+}
+#menu > ul{
+    width: 100%;
+}
+ul > #title{
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+li{
+    border-bottom: 1px solid white;
+    padding : 15px;
+    font-size: 20px;
+    list-style: none;
+    font-weight: bold;
+}
+#menu > ul > li > a:hover{ color: #36b2fc;}
+
+/* ========== 로그인 ========== */
+
+#logIn{ 
+    display: flex; justify-content: right; align-items: center;
+    width: 100%; height: 40px;
+    margin: 0 auto;
+}
+#logIn div{ margin-right: 10px;}
+#logIn button{ 
+    font-family: "NanumSquare"; font-weight: bold; font-size: 15px;
+    margin-top: 3px;
+}
