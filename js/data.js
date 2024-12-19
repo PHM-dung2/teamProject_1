@@ -1100,6 +1100,20 @@ function setSampleList( sampleList ){
     localStorage.setItem('sampleList', JSON.stringify( sampleList ) );
 } // f end
 
+// 로그인바 함수
+function logInFunc(){
+    
+}
+
+// 로그아웃 함수
+function logOutFunc(){
+    if( !confirm("로그아웃 하시겠습니까?") ){
+        return;
+    }
+    html = ``;
+    document.querySelector('#logIn').innerHTML = html;
+} // f end
+
 // // 페이징 함수
 // function pagingFunc( value ){
 //     let totalPage = Math.ceil(totalCount / limit)
