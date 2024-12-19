@@ -33,7 +33,7 @@ function registUser(){
             
             //// +로그아웃 
             // localStorage.removeItem('loginAno');
-            // location.href="index.html"; // JS에서 제공하는 페이지 이동 함수. location.href="이동하고싶은HTML파일경로"
+            location.href="가맹관리.html"; // JS에서 제공하는 페이지 이동 함수. location.href="이동하고싶은HTML파일경로"
 
             return;
         }

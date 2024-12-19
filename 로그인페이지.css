@@ -1,6 +1,6 @@
 @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
 *{
-    /* border: 1px solid red; */
+    border: 1px solid red;
     margin : 0px; padding: 0px;
     box-sizing: border-box;
 }
@@ -48,14 +48,20 @@ li{
 
 
 /*================== 로그인 페이지 ==================*/
+#logo{
+    width: 20%;
+    border-radius: 100%;
+}
+
 #loginPage{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-self: center;
     padding: 15px;
-    margin: 330px auto;
-    
+    margin: 0 auto;
+    width: 50%;
+    height: 700px;
 }
 .userId{
     display: flex;
@@ -75,7 +81,6 @@ li{
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
-   
 }
 
 input{
