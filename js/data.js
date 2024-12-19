@@ -1053,10 +1053,10 @@ function setYearList( yearList ){
 function resetList(){
     let monthArray = monthList();
     let yearArray = yearList();
-    monthArray = null;
-    yearArray = null;
-    setMonthList();
-    setYearList();
+    monthArray = [];
+    yearArray = [];
+    setMonthList( monthArray );
+    setYearList( yearArray );
 } // f end
 
 // 제품번호 샘플
