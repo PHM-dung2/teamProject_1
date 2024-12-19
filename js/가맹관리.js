@@ -7,7 +7,7 @@ logInFunc( )
 ];
 let sno = 4;
 */
-
+inputPrint()
 function inFunc(){
     let name = document.querySelector('.name').value;
     let sName = document.querySelector('.sName').value;
@@ -65,7 +65,7 @@ function outFunc(){
                         <td style="width: 130px;">${info.sName}</td>
                         <td style="width: 360px;">${info.address}</td>
                         <td style="width: 130px;">${info.businessNum}</td>
-                        <td style="width: 174px;">
+                        <td style="width: 183px;">
                             <button onclick="changeOutFunc(${info.no})" class="btn" type="button">수정</button>
                             <button onclick="deleteFunc(${info.no})" class="btn" type="button">삭제</button>
                         </td>
@@ -153,7 +153,7 @@ function changeFunc(i){
     }
     setSampleList(sampleArr);
     alert("가맹정보가 수정되었습니다.");
-
+    inputPrint()
     outFunc();
 
     document.querySelector('.chName').value = '';
@@ -171,16 +171,16 @@ function changeFunc(i){
 
 // 메뉴 li에 각 페이지 링크 연결하기
 
-// 수정 html 출력
-function updatePrint(){
-    html = `<input class="chName" type="text" placeholder="점주명"/>
-            <input class="chSName" type="text" placeholder="지점명"/>
-            <input class="chBusinessNum" type="text" placeholder="사업자번호"/>
-            <br/>
-            <input type="text" id="sample6_postcode2" placeholder="우편번호">
-            <input class="inBtn" style="width: 150px;" type="button" onclick="sample6_execDaumPostcode2()" value="우편번호 찾기"><br>                        <input class="chAddress" type="text" id="sample6_address2" placeholder="주소">
-            <input type="text" id="sample6_detailAddress2" placeholder="상세주소">
-                
-            <button  class="changeBtn" type="button">가맹수정</button>`
+// 등록 html 출력
+function inputPrint(){
+    html = `<h3></h3>
+            <input class="name" style="width: 322px;" type="text" placeholder="점주명"/>
+            <input class="sName" style="width: 322px;" type="text" placeholder="지점명"/>
+            <input class="businessNum" style="width: 322px;" type="text" placeholder="사업자번호"/>
+            <input type="text" id="sample6_postcode" placeholder="우편번호">
+            <input class="inBtn" style="width: 150px;" type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
+            <input class="address" type="text" id="sample6_address" placeholder="주소">
+            <input type="text" id="sample6_detailAddress" placeholder="상세주소">
+            <button onclick="inFunc()" class="inBtn" type="button">가맹등록</button>`;
     document.querySelector('#input').innerHTML = html;
 }
