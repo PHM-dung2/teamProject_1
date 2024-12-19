@@ -21,7 +21,7 @@ function registUser(){
     let userPassword = document.querySelector('.userPwInput').value;
 
     // 2. 기존의 관리자정보를 가져오기 
-    let adminList = sampleAminList();
+    let adminList = sampleAdminList();
 
     // 3. 입력받은 정보와 기존의 관리자정보리스트 
     for( let index = 0 ; index <= adminList.length-1 ; index++ ){

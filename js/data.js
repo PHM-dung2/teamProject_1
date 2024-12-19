@@ -55,9 +55,9 @@ function sampleList(){
 }
 
 // 관리자 로그인 정보 리스트
-function sampleAminList(){
-    let sampleAminList = localStorage.getItem('sampleAminList')
-    if( sampleAminList == null){
+function sampleAdminList(){
+    let sampleAdminList = localStorage.getItem('sampleAdminList')
+    if( sampleAdminList == null){
         sampleAdminList = [
             { ano : 1 , name : '송제영', id : 'admin-01@google.com', pw : '1111'},
             { ano : 2 , name : '박희만', id : 'admin-02@google.com', pw : '2222'},
@@ -65,7 +65,7 @@ function sampleAminList(){
             { ano : 4 , name : '유재석', id : 'admin-04@google.com', pw : '4444'},
             { ano : 5 , name : '강호동', id : 'admin-05@google.com', pw : '5555'},
         ];
-    }else{sampleAminList = JSON.parse(sampleAminList);        
+    }else{sampleAdminList = JSON.parse(sampleAdminList);        
         }
-        return sampleAminList;
+        return sampleAdminList;
 }
