@@ -1100,11 +1100,11 @@ function sampleAdminList(){
     let sampleAdminList = localStorage.getItem('sampleAdminList')
     if( sampleAdminList == null){
         sampleAdminList = [
-            { ano : 1 , name : '송제영', id : '1234', pw : '1234'},
-            { ano : 2 , name : '박희만', id : '5678', pw : '5678'},
-            { ano : 3 , name : '김도하', id : 'admin-03@google.com', pw : '3333'},
-            { ano : 4 , name : '유재석', id : 'admin-04@google.com', pw : '4444'},
-            { ano : 5 , name : '강호동', id : 'admin-05@google.com', pw : '5555'},
+            { ano : 1 , name : '송제영', id : '1234', pw : '1234' , rank: '과장' , name: '송제영' },
+            { ano : 2 , name : '박희만', id : '5678', pw : '5678' , rank: '팀장' , name: '박희만' },
+            { ano : 3 , name : '김도하', id : 'admin-03@google.com', pw : '3333' , rank: '회장', name: '김도하' },
+            { ano : 4 , name : '유재석', id : 'admin-04@google.com', pw : '4444' , rank: '부장', name: '최홍빈' },
+            { ano : 5 , name : '강호동', id : 'admin-05@google.com', pw : '5555' , rank: '사장', name: '김현수' }
         ];
     }else{sampleAdminList = JSON.parse(sampleAdminList);        
         }

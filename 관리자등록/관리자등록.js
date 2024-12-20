@@ -1,48 +1,18 @@
 // 1. 초기 관리자 데이터 설정 : 기존 관리자 정보를 로컬스토리지에 저장
-if (!localStorage.getItem('adminLists')) {
+
   // 만약 localStorage 에 adminLists 데이터가 없으면 초기 데이터 저장!
 
-  const adminLists = [
-    {
-      id: 1,
-      email: 'admin-01@gmail.com',
-      password: '1234',
-      rank: '과장',
-      name: '송제영',
-    },
-    {
-      id: 2,
-      email: 'admin-02@gmail.com',
-      password: '1234',
-      rank: '팀장',
-      name: '박희만',
-    },
-    {
-      id: 3,
-      email: 'admin-03@gmail.com',
-      password: '1234',
-      rank: '회장',
-      name: '김도하',
-    },
-    {
-      id: 4,
-      email: 'admin-04@gmail.com',
-      password: '1234',
-      rank: '부장',
-      name: '최홍빈',
-    },
-  ];
+  const adminLists = sampleAdminList();
 
   // 로컬스토리지에 초기 데이터 저장 : 로컬스토리지는 문자열만 저장할 수 있으므로, 객체를 JSON 문자열로 변환
-  localStorage.setItem('adminLists', JSON.stringify(adminLists));
+  setSampleList(adminLists);
 
   // 로컬스토리지 초기화 : localStorage.clear();
   // 로컬스토리지 특정 데이터만 삭제 : localStorage.removeItem('키이름')
   // 로컬스토리지 초기화 / 삭제 후 확인 : console.log(localStorage);
-}
+
 
 // 1-2 확인을 위해 로컬스토리지 데이터(관리자 목록)를 전역변수로 지정 하고 데이터가 없으면 빈 배열로 만듬
-const adminLists = JSON.parse(localStorage.getItem('adminLists')) || [];
 // 로컬스토리지 데이터를 표형태로 콘솔에 출력
 console.table(adminLists);
 
@@ -89,4 +59,4 @@ function createAdmin() {
 }
 
 // 3. 등록 버튼 클릭시 관리자 추가 : 이벤트리스너(여러개 리스너를 요소에 추가가능) / 온클릭(하나의 리스너만 등록가능)
-document.querySelector('.adminBtn').addEventListener('click', createAdmin);
+document.querySelector('.inBtn').addEventListener('click', createAdmin);
