@@ -21,7 +21,7 @@ function limitLocation(){
     if( ano == '' || ano == null ){
         html = `<ul>
                     <li id="title" >메뉴</li>
-                    <li><a href="관리자등록.html">관리자등록</a></li>
+                    <li><a href="관리자등록/관리자등록.html">관리자등록</a></li>
                     <li><a onclick="limitAlert()">가맹관리</a></li>
                     <li><a onclick="limitAlert()">매출관리</a></li>
                 </ul>`
