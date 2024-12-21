@@ -1145,19 +1145,30 @@ function logOutFunc(){
 } // f end
 
 
-// // 페이징 함수
-// function pagingFunc( value ){
-//     let totalPage = Math.ceil(totalCount / limit)
+// 페이징 함수
+function pagingFunc(  ){
+    let saleArray = saleList();
+    const limit = 10;
+    let totalCount = saleArray.length;
+    let totalPage = totalCount / limit;
 
-//     let saleArray = saleList();
-//     let totalCount = saleArray.length;
-//     const limit = 10;
+    let html = ``;
+    let page = 1;
 
-//     let html = '';
-//     for( let i = 1 ; i <= totalPage ; i++ ){
-        
-//     }
-// }
+    // if( page % 10 == 1 ){
+    //     html += `<button><buttom>`;
+    // }else{ html += `<button>이전<button>`; }
+
+    // for( let i = page ; i <= totalPage ; i++ ){
+    //     html += `<button>${ i }</button>`  
+    // } // for end
+    
+    // if( page == 10 ){
+    //     html += `<button>다음</button>`
+    // }
+
+    document.querySelector('#paging').innerHTML = html;
+} // f end
 
 // function nextPageFunc(){
     
