@@ -1003,7 +1003,8 @@ function saleList(){
             {"sno":997,"type":0,"date":"2022-10-23","count":46,"pno":3,"no":1},
             {"sno":998,"type":1,"date":"2024-01-15","count":38,"pno":3,"no":3},
             {"sno":999,"type":0,"date":"2022-12-31","count":8,"pno":2,"no":5},
-            {"sno":1000,"type":0,"date":"2021-08-14","count":43,"pno":3,"no":4}
+            {"sno":1000,"type":0,"date":"2021-08-14","count":43,"pno":3,"no":4},
+            {"sno":1001,"type":0,"date":"2021-08-14","count":43,"pno":2,"no":4}
         ];
     }else{
         saleList = JSON.parse( saleList );
@@ -1152,13 +1153,17 @@ function pagingFunc( ){
     const limit = 10;
     let totalCount = saleArray.length;
     let totalPage = totalCount / limit;
+    if( totalPage > parseInt( totalPage ) ){
+        totalPage = parseInt( totalPage ) + 1; }
+    else{ totalPage = parseInt( totalPage ); }
+
 
     let html = ``;
     if( page == 0 ){
         html += `<div></div>`;
     }else{ html += `<div>
-                        <button onclick="firstPageFunc()"> << <button>
-                        <button onclick="prevPageFunc()"> < <button>
+                        <button onclick="firstPageFunc()"> << </button>
+                        <button onclick="prevPageFunc()"> < </button>
                     </div>`; }
 
     let endPage = false;
@@ -1194,6 +1199,8 @@ function firstPageFunc(){
 }
 
 function endPageFunc( totalPage ){
-    page = ( totalPage / 10 ) - 1;
+    if( totalPage / 10 > parseInt( totalPage / 10 ) ){
+        page = parseInt( totalPage / 10 ); }
+    else{ page = parseInt( totalPage / 10 ) - 1; }
     pagingFunc();
-}
+} 

@@ -109,9 +109,13 @@ li{
 #paging{
     text-align: center;
     margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-#paging{
-    
+#paging div{ 
+    /* display: inline-block; */
+    width: 130px; height: 54px;
 }
 #paging button{
     width: 50px; height: 42px;
