@@ -1145,7 +1145,7 @@ function logOutFunc(){
 } // f end
 
 
-let page = 1;
+let page = 0;
 // 페이징 함수
 function pagingFunc( ){
     let saleArray = saleList();
@@ -1154,32 +1154,46 @@ function pagingFunc( ){
     let totalPage = totalCount / limit;
 
     let html = ``;
-    let count = 0;
+    if( page == 0 ){
+        html += `<div></div>`;
+    }else{ html += `<div>
+                        <button onclick="firstPageFunc()"> << <button>
+                        <button onclick="prevPageFunc()"> < <button>
+                    </div>`; }
 
-    if( page == 1 ){
-        html += `<button><button>`;
-    }else{ html += `<button onclick="prevPageFunc()">이전<button>`; }
-
-    for( let i = page ; i <= totalPage ; i++ ){
-        html += `<button onclick="">${ page }</button>`; 
-        count++;
-        if( count == 10 ){ break; }
-        page++;
+    let endPage = false;
+    let currentPage = page * limit + 1;
+    for( let i = currentPage ; i <= currentPage + 9 ; i++ ){
+        html += `<button onclick="">${ i }</button>`; 
+        if( i == totalPage ){ endPage = true; break; }
     } // for end
     
-    if( count - 10 == 0 ){
-        html += `<button onclick="nextPageFunc()">다음</button>`;
-    }else{ html += `<button></button>`; }
+    if( endPage ){
+        html += `<div></div>`;
+    }else{ html += `<div>
+                        <button onclick="nextPageFunc()"> > </button>
+                        <button onclick="endPageFunc( ${ totalPage } )"> >> </button>
+                    </div>`; }
 
     document.querySelector('#paging').innerHTML = html;
 } // f end
 
-function prevPageFunc( ){
-    page -= 9;
-    pagingFunc( );
+function prevPageFunc(){
+    page--;
+    pagingFunc();
 }
 
-function nextPageFunc( ){
+function nextPageFunc(){
     page++;
-    pagingFunc( );
+    pagingFunc();
+}
+
+function firstPageFunc(){
+    page = 0;
+    pagingFunc();
+}
+
+function endPageFunc( totalPage ){
+    page = ( totalPage / 10 ) - 1;
+    pagingFunc();
 }

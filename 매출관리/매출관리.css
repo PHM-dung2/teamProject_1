@@ -105,4 +105,21 @@ li{
     border: 1px solid black;
 }
 
-
+/* ========== 페이징 =========== */
+#paging{
+    text-align: center;
+    margin-top: 10px;
+}
+#paging{
+    
+}
+#paging button{
+    width: 50px; height: 42px;
+    margin: 5px;
+    font-family: "NanumSquare";
+    font-size: 13px;
+}
+#paging button:active{ 
+    background-color: #00306e; 
+    color: white;
+}
