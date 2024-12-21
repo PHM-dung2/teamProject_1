@@ -59,119 +59,62 @@ li {
 
 /* 사이드 바 끝 */
 
-/* 관리자 등록 전체 영역 */
-#AdminAllArea {
-  /* border: 1px solid purple; */
-  width: 100%;
-  height: 100%;
+/* ===== 관리자 등록 전체 영역 ===== */
+#content {
   margin: 0 auto;
+  width: 75%;
+  display: flex;
+  align-items: center;
 }
 
-/* 관리자 타이틀 영역 */
-.adminTitleArea {
-  text-align: center;
-  margin: 30px 0;
+#AdminAllArea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    padding: 15px;
+    margin: 0 auto;
+    width: 50%;
+    height: 650px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px 1px #8d8d8d;
 }
 
-/* 관리자 타이틀 */
-.adminTitle {
-  font-size: 34px;
+.adminTitle{
+  margin: 60px 0px;
 }
 
-/* 관리자 인풋 전체 영역 */
-.adminInBuArea {
-  text-align: end;
-  margin-right: 500px;
-  padding-right: 130px;
-  font-size: 16px;
-  height: 100%;
-}
-
-/* 관리자 아이디 영역 */
-.adminIdArea {
-  padding: 15px 0;
-}
-
-/* 관리자 아이디 인풋 */
-.adminIdInput {
-  padding: 10px;
-  border-radius: 25px;
-  width: 400px;
-  height: 50px;
-  font-size: 16px;
-  background-color: #75989941;
-  margin-left: 10px;
-}
-
-/* 관리자 패스워드 영역 */
-.AdminPasswordArea {
-  padding: 15px 0;
-}
-
-/* 관리자 패스워드 인풋 */
-.adminPwInput {
-  padding: 10px;
-  border-radius: 25px;
-  width: 400px;
-  height: 50px;
-  font-size: 16px;
-  background-color: #75989941;
-  margin-left: 10px;
-}
-
-/* 관리자 직급 영역 */
-.AdminRankArea {
-  padding: 15px 0;
-}
-
-/* 관리자 직급 인풋 */
-.adminRkInput {
-  padding: 10px;
-  border-radius: 25px;
-  width: 400px;
-  height: 50px;
-  font-size: 16px;
-  background-color: #75989941;
-  margin-left: 10px;
-}
-
-/* 관리자 이름 영역 */
-.AdminNameArea {
-  padding: 15px 0;
-}
-
-/* 관리자 이름 인풋 */
-.adminNaInput {
-  padding: 10px;
-  border-radius: 25px;
-  width: 400px;
-  height: 50px;
-  font-size: 16px;
-  background-color: #75989941;
-  margin-left: 10px;
-}
-
-/* 관리자 등록 버튼 영역 */
-.AdminBtnArea {
-  padding: 15px 0;
-}
-
-/* 관리자 등록 버튼 */
-.adminBtn {
-  background-color: #00306e;
-  border-color: #0571d3;
-  color: white;
-  border-radius: 25px;
-  font-size: 16px;
+input{
   width: 200px;
-  height: 50px;
-  padding: 10px;
+  height: 45px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  border-radius: 10px;
+  border: 2px solid black;
+  padding: 15px;
 }
 
-/* 관리자 등록 버튼 호버시 */
-.adminBtn:hover {
-  background-color: #36b2fc;
-  color: black;
-  cursor: pointer;
+.joinText{
+  display: inline-block;
+  width: 100px;
+  text-align: center;
 }
-/* 관리자 등록 전체 영역 끝 */
+
+.AdminBtnArea{
+  text-align: center;
+}
+
+.inBtn{
+  width: 100px;
+  height: 47px;
+  border-radius: 10px;
+  border: none;
+  background-color: #00306e;
+  color: white;
+  font-weight: bold;
+  font-size: 17px;
+}
+.inBtn:active{ background-color: #004aad;}
+
+/* ===== 관리자 등록 전체 영역 끝 ===== */

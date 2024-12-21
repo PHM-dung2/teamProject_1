@@ -1,18 +1,18 @@
 *{
-    /* border: 1px solid red; */
+  /* border: 1px solid red; */
 }    
 
 #content{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #main{
-    margin: 0 auto;
-    margin-top: 0px;
-    width: 1000px;
-    flex-wrap: wrap;
+  margin: 0 auto;
+  margin-top: 0px;
+  width: 1000px;
+  flex-wrap: wrap;
 }
 
 .sName{ margin: 0px 11px; }
@@ -21,82 +21,82 @@
 #sample6_address2{ margin-right: 11px; }
 
 #main input{
-    width: 430px;
-    height: 45px;
-    margin-bottom: 15px;
-    border-radius: 7px;
-    border: 1px solid black;
-    padding-left: 10px;
+  width: 430px;
+  height: 45px;
+  margin-bottom: 15px;
+  border-radius: 7px;
+  border: 1px solid black;
+  padding-left: 10px;
 }
 #change{
-    margin-top: 10px;
+  margin-top: 10px;
 }
 .inBtn , .changeBtn{
-    height: 40px;
-    width: 100px;
-    border-radius: 10px;
-    border: none;
-    background-color: #00306e;
-    color: white;
-    font-weight: bold;
-    margin: 0px 0px 7px 11px;
-    box-shadow: 3px 3px 5px #8d8d8d;
+  height: 40px;
+  width: 100px;
+  border-radius: 10px;
+  border: none;
+  background-color: #00306e;
+  color: white;
+  font-weight: bold;
+  margin: 0px 0px 7px 11px;
+  box-shadow: 3px 3px 5px #8d8d8d;
 }
 
 .inBtn:active{ background-color: #004aad;}
 .changeBtn:active{ background-color: #004aad;}
 
 table{
-    text-align: center;
-    width: 100%;
-    border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+  border-collapse: collapse;
 }
 thead{
-    background-color: #00306e; 
-    color : white;
+  background-color: #00306e; 
+  color : white;
 }
 
 th, td{
-    height: 47px;
+  height: 47px;
 }
 
 .btn{
-    height: 40px;
-    width: 70px;
-    border-radius: 10px;
-    border: none;
-    background-color: #00306e;
-    color: white;
-    font-weight: bold;
-    box-shadow: 3px 3px 5px #8d8d8d;
+  height: 40px;
+  width: 70px;
+  border-radius: 10px;
+  border: none;
+  background-color: #00306e;
+  color: white;
+  font-weight: bold;
+  box-shadow: 3px 3px 5px #8d8d8d;
 }
 
 .btn:active{ background-color: #004aad;}
 
 #output{
-    width: 1000px;
-    max-height: 472px;
-    overflow-x:hidden;
-    overflow-y: scroll;
-    box-shadow: 3px 3px 5px #8d8d8d;
+  width: 1000px;
+  max-height: 472px;
+  overflow-x:hidden;
+  overflow-y: scroll;
+  box-shadow: 3px 3px 5px #8d8d8d;
 }
 
 #input{ margin-bottom: 10px;}
 
 #point{
-    margin-top: 35px;
+  margin-top: 35px;
 }
 h2{
-    height: 50px;
-    margin: 20px 0px 10px 0px;
-    align-content: center;
+  height: 50px;
+  margin: 20px 0px 10px 0px;
+  align-content: center;
 }
 h3{
-    height: 30px;
-    margin: 10px 0px;
+  height: 30px;
+  margin: 10px 0px;
 }
 #cc{
-    width: 75%;
-    flex-wrap: wrap;
-    margin: 0 auto;
+  width: 75%;
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
