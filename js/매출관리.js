@@ -1,6 +1,6 @@
 document.querySelectorAll("select option")[2].selected = true;
-logInFunc( )
-pagingFunc(  )
+logInFunc();
+pagingFunc( );
 
 // 셀렉트 박스에 선택된 값을 넘겨주기
 function changeSelect(str){
