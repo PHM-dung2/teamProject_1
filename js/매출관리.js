@@ -1,12 +1,19 @@
 document.querySelectorAll("select option")[2].selected = true;
 logInFunc();
+let listType = "day";
 
 // 셀렉트 박스에 선택된 값을 넘겨주기
 function changeSelect(str){
-    if(str == "sDay"){ listFunc(); page = 0; currentPage = 1;}
-    else if(str == "sMonth"){ monthListFunc(); page = 0; currentPage = 1;} 
-    else if(str == "sYear"){ yearListFunc(); page = 0; currentPage = 1;}
-}
+    if(str == "sDay"){ 
+        listFunc(); page = 0; currentPage = 1; listType = "day"
+    }
+    else if(str == "sMonth"){ 
+        monthListFunc(); page = 0; currentPage = 1; listType = "month"
+    } 
+    else if(str == "sYear"){ 
+        yearListFunc(); page = 0; currentPage = 1; listType = "year"
+    } // if end
+} // f end
 
 // 출력
 function outputFunc(html){
@@ -90,8 +97,6 @@ function listFunc(){
 
 // 월별 리스트
 function monthListFunc(){
-    page = 0; 
-    currentPage = 1;
     let saleArray = saleList();
     let sampleArray = sampleList();
     let productArray = productList();
@@ -126,7 +131,7 @@ function monthListFunc(){
                         } // if end
                     } // for end
                     
-                    // 출력
+                    // 월별 배열 추가
                     if( sName != ''){ 
                         let board = {
                             "sName" : sName ,
@@ -153,24 +158,24 @@ function monthListFunc(){
     let printArray = JSON.parse( localStorage.getItem( 'printList'));
     while ( printArray.length < 10 ) {
         let board = {
-            "sno": "",
-            "type": "-1",
-            "date": "",
+            "sName": "",
+            "year": "",
+            "month": "", 
+            "pName": "",
             "count": "",
-            "pno": "",
-            "no": ""
+            "price": ""
         }
         printArray.push( board );
     }
     console.log( printArray );
     
     let html = ``;
-    for( let i = 0 ; i < monthArray.length ; i++ ){
-        let info = monthArray[i];
+    for( let i = 0 ; i < printArray.length ; i++ ){
+        let info = printArray[i];
         html += `<tr>
                     <td>${ info.sName }</td>
-                    <td>${ info.year }년</td>
-                    <td>${ info.month }월</td>
+                    <td>${ info.year }${ info.year == '' ? '' : "년" }</td>
+                    <td>${ info.month }${ info.year == '' ? '' : "월" }</td>
                     <td>${ info.pName }</td>
                     <td>${ info.count }</td>
                     <td>${ info.price }</td>
@@ -184,8 +189,6 @@ function monthListFunc(){
 
 // 년도별 리스트
 function yearListFunc(){
-    page = 0; 
-    currentPage = 1;
     let saleArray = saleList();
     let sampleArray = sampleList();
     let productArray = productList();
@@ -218,7 +221,7 @@ function yearListFunc(){
                     } // if end
                 } // for end
 
-                // 출력
+                // 년도별 배열 추가
                 if( sName != ''){ 
                     let board = {
                         "sName" : sName ,
@@ -237,13 +240,29 @@ function yearListFunc(){
         } // for end    
     } // for end
 
+    totalCount = yearArray.length;
+    pagingFunc( );
+    printList( yearArray );
+    let printArray = JSON.parse( localStorage.getItem( 'printList'));
+    while ( printArray.length < 10 ) {
+        let board = {
+            "sName": "",
+            "year": "",
+            "pName": "",
+            "count": "",
+            "price": ""
+        }
+        printArray.push( board );
+    }
+    console.log( yearArray );
+
     let html = ``;
-    for( let i = 0 ; i < yearArray.length ; i++ ){
-        let info = yearArray[i];
+    for( let i = 0 ; i < printArray.length ; i++ ){
+        let info = printArray[i];
         html += `<tr>
                     <td>${ info.sName }</td>
                     <td></td>
-                    <td>${ info.year }년</td>
+                    <td>${ info.year }${ info.year == '' ? '' : "년" }</td>
                     <td>${ info.pName }</td>
                     <td>${ info.count }</td>
                     <td>${ info.price }</td>
@@ -251,8 +270,6 @@ function yearListFunc(){
                     </td>
                 </tr>`;
     } // for end
-    totalCount = yearArray.length;
-    pagingFunc( );
     setYearList( yearArray );
     outputFunc( html );
 } // f end

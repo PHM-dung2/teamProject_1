@@ -1209,7 +1209,10 @@ function endPageFunc( totalPage ){
 // 클릭한 페이지 버튼 표시
 function pagePrintFunc( selectPage ){
     currentPage = selectPage;
-    listFunc();
+    if( listType == "day"){ listFunc(); }
+    else if( listType == "month"){ monthListFunc(); }
+    else if( listType == "day"){ yearListFunc(); }
+    
 } // f end
 
 // 출력할 리스트 배열 생성

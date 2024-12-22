@@ -75,8 +75,8 @@ li{
 
 #saleTable{ border-style: hidden;}
 #saleTable thead{ background-color: #00306e; color : white;}
-#saleTable .manage{ width: 203px;}
-#saleTable .tableBtn{ width: 190px;}
+#saleTable .manage{ width: 200px;}
+#saleTable .tableBtn{ width: 200px;}
 #saleTable .tableBtn > button:active{ background-color: #004aad;}
 #saleTable button{ 
     height: 40px;
@@ -91,9 +91,7 @@ li{
 }
 #scroll{
     width: 100%;
-    height: 518px;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    height: 517px;
     box-shadow: 3px 3px 5px #8d8d8d;
 }
 .tableList input, select{
