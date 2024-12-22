@@ -113,16 +113,18 @@ li{
     align-items: center;
     justify-content: center;
 }
-#paging .chgBtn{ 
-    width: 130px; height: 54px;
-}
+#paging .chgBtn{ width: 150px; height: 54px; }
 #paging button{
     width: 50px; height: 42px;
     margin: 5px;
+    border: 1px solid #b8b8b8;
+    border-radius: 5px;
     font-family: "NanumSquare";
     font-size: 13px;
+    font-weight: bold;
 }
-#paging button:active{ 
+#Paging .pageBtn{ background-color: white; }
+#paging .pageBtn:active{ 
     background-color: #00306e; 
     color: white;
 }

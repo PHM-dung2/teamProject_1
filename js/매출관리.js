@@ -3,9 +3,9 @@ logInFunc();
 
 // 셀렉트 박스에 선택된 값을 넘겨주기
 function changeSelect(str){
-    if(str == "sDay"){ listFunc(); }
-    else if(str == "sMonth"){ monthListFunc(); }
-    else if(str == "sYear"){ yearListFunc(); }
+    if(str == "sDay"){ listFunc(); page = 0; currentPage = 1;}
+    else if(str == "sMonth"){ monthListFunc(); page = 0; currentPage = 1;} 
+    else if(str == "sYear"){ yearListFunc(); page = 0; currentPage = 1;}
 }
 
 // 출력
@@ -24,9 +24,26 @@ function listFunc(){
         return a.no - b.no || new Date(b.date) - new Date(a.date);
     });
     
+    totalCount = saleArray.length;
+    pagingFunc( );
+    printList( saleArray );
+    let printArray = JSON.parse( localStorage.getItem( 'printList'));
+    while ( printArray.length < 10 ) {
+        let board = {
+            "sno": "",
+            "type": "-1",
+            "date": "",
+            "count": "",
+            "pno": "",
+            "no": ""
+        }
+        printArray.push( board );
+    }
+    console.log( printArray );
+   
     let html = ``;
-    for( let i = 0 ; i < saleArray.length ; i++){
-        let info1 = saleArray[i];
+    for( let i = 0 ; i < 10 ; i++){
+        let info1 = printArray[i];
         let sName = '';
         let price = '';
         let pType = '';
@@ -47,10 +64,10 @@ function listFunc(){
             } // if end
         } // for 3 end
 
-        if( info1.type == 0 ){ pType = "구매" }
-        else if( info1.type == 1 ){ pType = "판매" }
-        else if( info1.type == 2 ){ pType = "환불" }
-
+        if( info1.type == 0 ){ pType = "구매"; }
+        else if( info1.type == 1 ){ pType = "판매"; }
+        else if( info1.type == 2 ){ pType = "환불"; }
+        
         // 출력
         html += `<tr>
                     <td>${ sName }</td>
@@ -58,21 +75,23 @@ function listFunc(){
                     <td>${ info1.date }</td>
                     <td>${ pName }</td>
                     <td>${ info1.count }</td>
-                    <td>${ (price * info1.count).toLocaleString('ko-KR') }</td>
+                    <td>${ price == '' ? '' : (price * info1.count).toLocaleString('ko-KR') }</td>
                     <td class="tableBtn">
-                        <button onclick="updateFunc(${ info1.sno })" type="button">수정</button>
-                        <button onclick="deleteFunc(${ info1.sno })" type="button">삭제</button>
+                        ${ price == '' ? '' : 
+                        `<button onclick="updateFunc(${ info1.sno })" type="button">수정</button>
+                        <button onclick="deleteFunc(${ info1.sno })" type="button">삭제</button>`}
                     </td>
                 </tr>`
     } // for1 end
-    let totalCount = saleArray.length;
-    pagingFunc( totalCount );
+    
     setSaleList( saleArray );
     outputFunc(html);
 } // f end
 
 // 월별 리스트
 function monthListFunc(){
+    page = 0; 
+    currentPage = 1;
     let saleArray = saleList();
     let sampleArray = sampleList();
     let productArray = productList();
@@ -127,6 +146,23 @@ function monthListFunc(){
             } // for end    
         } // for1 end
     } // for end
+
+    totalCount = monthArray.length;
+    pagingFunc( );
+    printList( monthArray );
+    let printArray = JSON.parse( localStorage.getItem( 'printList'));
+    while ( printArray.length < 10 ) {
+        let board = {
+            "sno": "",
+            "type": "-1",
+            "date": "",
+            "count": "",
+            "pno": "",
+            "no": ""
+        }
+        printArray.push( board );
+    }
+    console.log( printArray );
     
     let html = ``;
     for( let i = 0 ; i < monthArray.length ; i++ ){
@@ -142,14 +178,14 @@ function monthListFunc(){
                     </td>
                 </tr>`;
     } // for end
-    let totalCount = monthArray.length;
-    pagingFunc( totalCount );
     setMonthList( monthArray );
     outputFunc(html);
 }
 
 // 년도별 리스트
 function yearListFunc(){
+    page = 0; 
+    currentPage = 1;
     let saleArray = saleList();
     let sampleArray = sampleList();
     let productArray = productList();
@@ -215,8 +251,8 @@ function yearListFunc(){
                     </td>
                 </tr>`;
     } // for end
-    let totalCount = yearArray.length;
-    pagingFunc( totalCount );
+    totalCount = yearArray.length;
+    pagingFunc( );
     setYearList( yearArray );
     outputFunc( html );
 } // f end

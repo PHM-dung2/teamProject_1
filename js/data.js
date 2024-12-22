@@ -1140,7 +1140,7 @@ function logInFunc( ){
 }
 
 // 로그아웃 함수
-function logOutFunc(){
+function logOutFunc( ){
     if( !confirm("로그아웃 하시겠습니까?") ){
         return;
     }
@@ -1150,41 +1150,38 @@ function logOutFunc(){
     location.href="../index.html";
 } // f end
 
-
+let totalCount = 0;
 let page = 0;
+let currentPage = 1;
 // 페이징 함수
-function pagingFunc( totalCount ){
-    const limit = 10;
-    let totalPage = totalCount / limit;
-    if( totalPage > parseInt( totalPage ) ){
-        totalPage = parseInt( totalPage ) + 1; }
-    else{ totalPage = parseInt( totalPage ); }
-
+function pagingFunc( ){
+    const pCount = 10;
+    let totalPage = Math.ceil( totalCount / pCount ); // Math.ceil 자리수 올림 처리
     let html = ``;
     if( page == 0 ){
-        html += `<div class="chgBtn"></div>
-                <div>`;
+        html += `<div class="chgBtn"></div>`;
     }else{ html += `<div class="chgBtn">
-                        <button onclick="firstPageFunc()"> << </button>
-                        <button onclick="prevPageFunc()"> < </button>
-                    </div>
-                    <div>`; }
-
-    let endPage = false;
-    let currentPage = page * limit + 1;
-    for( let i = currentPage ; i <= currentPage + 9 ; i++ ){
-        html += `<button class="  " onclick="pageFrintFunc( ${ i , totalCount } )">${ i }</button>`; 
-        if( i == totalPage ){ endPage = true; break; }
-    } // for end
-    
-    if( endPage ){
-        html += `</div>
-                <div class="chgBtn"></div>`;
-    }else{ html += `</div>
-                    <div class="chgBtn">
-                        <button onclick="nextPageFunc()"> > </button>
-                        <button onclick="endPageFunc( ${ totalPage } )"> >> </button>
+                        <button class="pageBtn" onclick="firstPageFunc()"> << </button>
+                        <button class="pageBtn" onclick="prevPageFunc()"> < </button>
                     </div>`; }
+
+    let startPage = page * pCount + 1;
+    let endPage = Math.min( startPage + pCount - 1 , totalPage ); // Math.min 최소값 찾기
+
+    html += `<div>`;
+    for ( let i = startPage; i <= endPage; i++ ){
+        html += `<button class="${ currentPage == i ? "selectPage" : "pageBtn" }" onclick="pagePrintFunc( ${i} )">${i}</button>`;
+    } // for end
+    html += `</div>`;
+    
+    if ( page < Math.floor( totalPage / pCount )){
+        html += `<div class="chgBtn">
+                    <button class="pageBtn" onclick="nextPageFunc()"> > </button>
+                    <button class="pageBtn" onclick="endPageFunc( ${ totalPage } )"> >> </button>
+                </div>`; // ${ a , b } 쉼표연산자로 해석되므로 ${a} , ${b} 따로따로 써야함
+    }else{
+        html += `<div class="chgBtn"></div>`;
+    } // if end
 
     document.querySelector('#paging').innerHTML = html;
 } // f end
@@ -1205,15 +1202,30 @@ function firstPageFunc(){
 } // f end
 
 function endPageFunc( totalPage ){
-    if( totalPage / 10 > parseInt( totalPage / 10 ) ){
-        page = parseInt( totalPage / 10 ); }
-    else{ page = parseInt( totalPage / 10 ) - 1; }
+    page = Math.floor( totalPage / 10 );
     pagingFunc();
 } // f end
 
-let printPage = 0;
-function pageFrintFunc( array , totalCount ){
-   for( let i = 0 ; i < array.length ; i++ ){
-        
-   } // for end
+// 클릭한 페이지 버튼 표시
+function pagePrintFunc( selectPage ){
+    currentPage = selectPage;
+    listFunc();
 } // f end
+
+// 출력할 리스트 배열 생성
+function printList( pArray ){
+    console.log(pArray)
+    const pCount = 10;
+    let startList = (currentPage - 1) * pCount;
+    let endList = Math.min( startList + pCount , totalCount );
+
+    let printList = [];
+    console.log( printList )
+    
+    for( let i =  startList ; i < endList ; i++ ){
+        let board = pArray[i];
+        printList.push( board );
+    } // for end
+
+    localStorage.setItem( 'printList' , JSON.stringify( printList ) );
+}
