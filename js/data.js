@@ -1153,30 +1153,27 @@ function logOutFunc(){
 
 let page = 0;
 // 페이징 함수
-function pagingFunc( ){
-    let saleArray = saleList();
+function pagingFunc( totalCount ){
     const limit = 10;
-    let totalCount = saleArray.length;
     let totalPage = totalCount / limit;
     if( totalPage > parseInt( totalPage ) ){
         totalPage = parseInt( totalPage ) + 1; }
     else{ totalPage = parseInt( totalPage ); }
 
-
     let html = ``;
     if( page == 0 ){
         html += `<div class="chgBtn"></div>
-                <div class="pageBtn">`;
+                <div>`;
     }else{ html += `<div class="chgBtn">
                         <button onclick="firstPageFunc()"> << </button>
                         <button onclick="prevPageFunc()"> < </button>
                     </div>
-                    <div class="pageBtn">`; }
+                    <div>`; }
 
     let endPage = false;
     let currentPage = page * limit + 1;
     for( let i = currentPage ; i <= currentPage + 9 ; i++ ){
-        html += `<button onclick="pageFrintFunc( ${ totalCount } )">${ i }</button>`; 
+        html += `<button class="  " onclick="pageFrintFunc( ${ totalCount } )">${ i }</button>`; 
         if( i == totalPage ){ endPage = true; break; }
     } // for end
     
@@ -1195,25 +1192,28 @@ function pagingFunc( ){
 function prevPageFunc(){
     page--;
     pagingFunc();
-}
+} //  f end
 
 function nextPageFunc(){
     page++;
     pagingFunc();
-}
+} // f end
 
 function firstPageFunc(){
     page = 0;
     pagingFunc();
-}
+} // f end
 
 function endPageFunc( totalPage ){
     if( totalPage / 10 > parseInt( totalPage / 10 ) ){
         page = parseInt( totalPage / 10 ); }
     else{ page = parseInt( totalPage / 10 ) - 1; }
     pagingFunc();
-} 
+} // f end
 
-function pageFrintFunc( totalCount ){
-    
-}
+let printPage = 0;
+function pageFrintFunc( array , totalCount ){
+   for( let i = 0 ; i < array.length ; i++ ){
+        
+   } // for end
+} // f end

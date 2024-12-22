@@ -114,7 +114,6 @@ li{
     justify-content: center;
 }
 #paging .chgBtn{ 
-    /* display: inline-block; */
     width: 130px; height: 54px;
 }
 #paging button{
@@ -127,7 +126,8 @@ li{
     background-color: #00306e; 
     color: white;
 }
-#paging .pageBtn{
-    width: 603px;
-    text-align: left;
+
+.selectPage{
+    background-color: #00306e;
+    color: white;
 }

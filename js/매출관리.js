@@ -1,6 +1,5 @@
 document.querySelectorAll("select option")[2].selected = true;
 logInFunc();
-pagingFunc( );
 
 // 셀렉트 박스에 선택된 값을 넘겨주기
 function changeSelect(str){
@@ -24,6 +23,7 @@ function listFunc(){
     saleArray.sort(function(a,b) {
         return a.no - b.no || new Date(b.date) - new Date(a.date);
     });
+    
     let html = ``;
     for( let i = 0 ; i < saleArray.length ; i++){
         let info1 = saleArray[i];
@@ -65,7 +65,9 @@ function listFunc(){
                     </td>
                 </tr>`
     } // for1 end
-
+    let totalCount = saleArray.length;
+    pagingFunc( totalCount );
+    setSaleList( saleArray );
     outputFunc(html);
 } // f end
 
@@ -140,8 +142,9 @@ function monthListFunc(){
                     </td>
                 </tr>`;
     } // for end
+    let totalCount = monthArray.length;
+    pagingFunc( totalCount );
     setMonthList( monthArray );
-
     outputFunc(html);
 }
 
@@ -212,8 +215,9 @@ function yearListFunc(){
                     </td>
                 </tr>`;
     } // for end
+    let totalCount = yearArray.length;
+    pagingFunc( totalCount );
     setYearList( yearArray );
-
     outputFunc( html );
 } // f end
 
