@@ -1173,7 +1173,7 @@ function pagingFunc( totalCount ){
     let endPage = false;
     let currentPage = page * limit + 1;
     for( let i = currentPage ; i <= currentPage + 9 ; i++ ){
-        html += `<button class="  " onclick="pageFrintFunc( ${ totalCount } )">${ i }</button>`; 
+        html += `<button class="  " onclick="pageFrintFunc( ${ i , totalCount } )">${ i }</button>`; 
         if( i == totalPage ){ endPage = true; break; }
     } // for end
     
