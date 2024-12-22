@@ -113,7 +113,7 @@ li{
     align-items: center;
     justify-content: center;
 }
-#paging div{ 
+#paging .chgBtn{ 
     /* display: inline-block; */
     width: 130px; height: 54px;
 }
@@ -126,4 +126,8 @@ li{
 #paging button:active{ 
     background-color: #00306e; 
     color: white;
+}
+#paging .pageBtn{
+    width: 603px;
+    text-align: left;
 }

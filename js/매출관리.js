@@ -65,6 +65,7 @@ function listFunc(){
                     </td>
                 </tr>`
     } // for1 end
+
     outputFunc(html);
 } // f end
 

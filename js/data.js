@@ -1096,7 +1096,12 @@ function sampleList(){
     return sampleList;
 }
 
-// 관리자 로그인 정보 리스트
+// 점주정보 저장 함수수
+function setSampleList( sampleList ){
+    localStorage.setItem('sampleList', JSON.stringify( sampleList ) );
+} // f end
+
+// 관리자정보 리스트
 function sampleAdminList(){
     let sampleAdminList = localStorage.getItem('sampleAdminList')
     if( sampleAdminList == null){
@@ -1113,8 +1118,8 @@ function sampleAdminList(){
 }
 
 // 관리자정보 저장 함수
-function setSampleList( sampleList ){
-    localStorage.setItem('sampleList', JSON.stringify( sampleList ) );
+function setSampleAdminList( sampleAdminList ){
+    localStorage.setItem('sampleAdminList', JSON.stringify( sampleAdminList ) );
 } // f end
 
 // 로그인 함수
@@ -1160,22 +1165,26 @@ function pagingFunc( ){
 
     let html = ``;
     if( page == 0 ){
-        html += `<div></div>`;
-    }else{ html += `<div>
+        html += `<div class="chgBtn"></div>
+                <div class="pageBtn">`;
+    }else{ html += `<div class="chgBtn">
                         <button onclick="firstPageFunc()"> << </button>
                         <button onclick="prevPageFunc()"> < </button>
-                    </div>`; }
+                    </div>
+                    <div class="pageBtn">`; }
 
     let endPage = false;
     let currentPage = page * limit + 1;
     for( let i = currentPage ; i <= currentPage + 9 ; i++ ){
-        html += `<button onclick="">${ i }</button>`; 
+        html += `<button onclick="pageFrintFunc( ${ totalCount } )">${ i }</button>`; 
         if( i == totalPage ){ endPage = true; break; }
     } // for end
     
     if( endPage ){
-        html += `<div></div>`;
-    }else{ html += `<div>
+        html += `</div>
+                <div class="chgBtn"></div>`;
+    }else{ html += `</div>
+                    <div class="chgBtn">
                         <button onclick="nextPageFunc()"> > </button>
                         <button onclick="endPageFunc( ${ totalPage } )"> >> </button>
                     </div>`; }
@@ -1204,3 +1213,7 @@ function endPageFunc( totalPage ){
     else{ page = parseInt( totalPage / 10 ) - 1; }
     pagingFunc();
 } 
+
+function pageFrintFunc( totalCount ){
+    
+}
