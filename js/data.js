@@ -1167,20 +1167,27 @@ function pagingFunc( ){
 
     let startPage = page * pCount + 1;
     let endPage = Math.min( startPage + pCount - 1 , totalPage ); // Math.min 최소값 찾기
-
+    
+    nextPageState = false;
     html += `<div>`;
     for ( let i = startPage; i <= endPage; i++ ){
         html += `<button class="${ currentPage == i ? "selectPage" : "pageBtn" }" onclick="pagePrintFunc( ${i} )">${i}</button>`;
+        if( endPage == totalPage ){ nextPageState = true; }
     } // for end
     html += `</div>`;
-    
-    if ( page < Math.floor( totalPage / pCount )){
+    console.log( page )
+    console.log( Math.floor( totalPage / pCount ) )
+
+
+    if ( totalCount > endPage * pCount ){
         html += `<div class="chgBtn">
                     <button class="pageBtn" onclick="nextPageFunc()"> > </button>
                     <button class="pageBtn" onclick="endPageFunc( ${ totalPage } )"> >> </button>
                 </div>`; // ${ a , b } 쉼표연산자로 해석되므로 ${a} , ${b} 따로따로 써야함
-    }else{
+    }else if ( nextPageState ){
         html += `<div class="chgBtn"></div>`;
+    }else{ 
+        html += `<div class="chgBtn"></div>`; 
     } // if end
 
     document.querySelector('#paging').innerHTML = html;
@@ -1203,6 +1210,8 @@ function firstPageFunc(){
 
 function endPageFunc( totalPage ){
     page = Math.floor( totalPage / 10 );
+    if( totalPage % 10 == 0 ){ page-- }
+    console.log( page )
     pagingFunc();
 } // f end
 
@@ -1211,19 +1220,17 @@ function pagePrintFunc( selectPage ){
     currentPage = selectPage;
     if( listType == "day"){ listFunc(); }
     else if( listType == "month"){ monthListFunc(); }
-    else if( listType == "day"){ yearListFunc(); }
+    else if( listType == "year"){ yearListFunc(); }
     
 } // f end
 
 // 출력할 리스트 배열 생성
 function printList( pArray ){
-    console.log(pArray)
     const pCount = 10;
     let startList = (currentPage - 1) * pCount;
     let endList = Math.min( startList + pCount , totalCount );
 
     let printList = [];
-    console.log( printList )
     
     for( let i =  startList ; i < endList ; i++ ){
         let board = pArray[i];

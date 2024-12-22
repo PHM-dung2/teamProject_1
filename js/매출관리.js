@@ -5,13 +5,13 @@ let listType = "day";
 // 셀렉트 박스에 선택된 값을 넘겨주기
 function changeSelect(str){
     if(str == "sDay"){ 
-        listFunc(); page = 0; currentPage = 1; listType = "day"
+        page = 0; currentPage = 1; listType = "day"; listFunc(); // 순서잘보기
     }
     else if(str == "sMonth"){ 
-        monthListFunc(); page = 0; currentPage = 1; listType = "month"
+        page = 0; currentPage = 1; listType = "month"; monthListFunc();
     } 
     else if(str == "sYear"){ 
-        yearListFunc(); page = 0; currentPage = 1; listType = "year"
+        page = 0; currentPage = 1; listType = "year"; yearListFunc(); 
     } // if end
 } // f end
 
@@ -254,7 +254,7 @@ function yearListFunc(){
         }
         printArray.push( board );
     }
-    console.log( yearArray );
+    console.log( printArray );
 
     let html = ``;
     for( let i = 0 ; i < printArray.length ; i++ ){
@@ -271,7 +271,7 @@ function yearListFunc(){
                 </tr>`;
     } // for end
     setYearList( yearArray );
-    outputFunc( html );
+    outputFunc(html);
 } // f end
 
 // 수정 html 출력
@@ -408,6 +408,8 @@ function deleteFunc( sno ){
             break;
         }
     } // for end
+
+    if(saleArray.length % 10 == 0){ currentPage-- }
     setSaleList( saleArray );
     listFunc();
     resetList()
