@@ -121,7 +121,7 @@ function deleteFunc(i){
     }
     if(sampleArr.length % 10 == 0){ currentPage-- }
     setSampleList(sampleArr);
-    return outFunc();    
+    outFunc();    
 }
 
 
