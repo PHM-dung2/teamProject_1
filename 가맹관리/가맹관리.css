@@ -60,6 +60,8 @@ th, td{
   height: 47px;
 }
 
+td{ background-color: white;}
+
 .btn{
   height: 40px;
   width: 70px;
@@ -99,4 +101,33 @@ h3{
   width: 75%;
   flex-wrap: wrap;
   margin: 0 auto;
+}
+
+/* ========== 페이징 =========== */
+#paging{
+  text-align: center;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#paging .chgBtn{ width: 150px; height: 54px; }
+#paging .pageBtn, .selectPage{
+  width: 50px; height: 42px;
+  margin: 5px;
+  border: 1px solid #b8b8b8;
+  border-radius: 5px;
+  font-family: "NanumSquare";
+  font-size: 13px;
+  font-weight: bold;
+  background-color: white;
+}
+#paging .pageBtn:active{ 
+  background-color: #00306e; 
+  color: white;
+}
+
+.selectPage{
+  background-color: #00306e;
+  color: white;
 }

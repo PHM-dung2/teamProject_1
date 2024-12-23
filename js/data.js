@@ -1221,6 +1221,7 @@ function pagePrintFunc( selectPage ){
     if( listType == "day"){ listFunc(); }
     else if( listType == "month"){ monthListFunc(); }
     else if( listType == "year"){ yearListFunc(); }
+    else{ outFunc(); }
     
 } // f end
 

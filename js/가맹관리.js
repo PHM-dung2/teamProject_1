@@ -7,12 +7,21 @@ logInFunc( )
 ];
 let sno = 4;
 */
+page = 0; 
+currentPage = 1;
+let listType = '';
 inputPrint()
 function inFunc(){
     let name = document.querySelector('.name').value;
     let sName = document.querySelector('.sName').value;
     let address = document.querySelector('.address').value;
     let businessNum = document.querySelector('.businessNum').value;
+
+    // 유효성검사
+    if( !name ){ alert("점주명을 입력해주세요."); return;}
+    if( !sName ){ alert("지점명을 입력해주세요."); return;}
+    if( !businessNum ){ alert("사업자번호를 입력해주세요."); return;}
+    if( !address ){ alert("주소를 입력해주세요."); return;}
 
     let sampleArr = sampleList();
     console.log(sampleList);
@@ -49,14 +58,29 @@ function inFunc(){
 
 outFunc();
 function outFunc(){
-
     let sampleArr = sampleList();
+    console.log( sampleArr )
+    totalCount = sampleArr.length;
+    pagingFunc( );
+    printList( sampleArr );
+    let printArray = JSON.parse( localStorage.getItem( 'printList'));
+    while ( printArray.length < 10 ) {
+        let board = {
+            "no": "",
+            "name": "",
+            "sName": "",
+            "address": "",
+            "businessNum": ""
+        }
+        printArray.push( board );
+    }
 
     let tbody = document.querySelector('table > tbody');
     let html = ``;
 
-    for(let i = 0; i < sampleArr.length ; i++){
-        let info = sampleArr[i];
+
+    for(let i = 0; i < printArray.length ; i++){
+        let info = printArray[i];
 
         html += `
                     <tr>
@@ -66,8 +90,9 @@ function outFunc(){
                         <td style="width: 360px;">${info.address}</td>
                         <td style="width: 130px;">${info.businessNum}</td>
                         <td style="width: 183px;">
-                            <button onclick="changeOutFunc(${info.no})" class="btn" type="button">수정</button>
-                            <button onclick="deleteFunc(${info.no})" class="btn" type="button">삭제</button>
+                            ${ info.no == "" || info.name == "" || info.sName == "" || info.address == "" || info.businessNum == "" ? "" : 
+                            `<button onclick="changeOutFunc(${info.no})" class="btn" type="button">수정</button>
+                            <button onclick="deleteFunc(${info.no})" class="btn" type="button">삭제</button>` }
                         </td>
                     </tr>
                 ` 
@@ -77,6 +102,7 @@ function outFunc(){
 
     return;
 }
+
 
 function deleteFunc(i){
     // Y/N 유효성검사
@@ -93,6 +119,7 @@ function deleteFunc(i){
             break;
         }
     }
+    if(sampleArr.length % 10 == 0){ currentPage-- }
     setSampleList(sampleArr);
     return outFunc();    
 }
