@@ -168,6 +168,11 @@ function changeFunc(i){
     let changeA = document.querySelector('.chAddress').value;
     let changeB = document.querySelector('.chBusinessNum').value;
 
+    if( !changeN || !changeS || !changeA || !changeB ){
+        alert( "수정할 내용을 입력해주세요." );
+        return;
+    }
+
 
     for(let j = 0 ; j < sampleArr.length ; j++){
         let info = sampleArr[j]
