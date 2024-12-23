@@ -131,3 +131,15 @@ h3{
   background-color: #00306e;
   color: white;
 }
+#mainTable{
+  display: inline-block;
+  border: none;
+  border-radius: 7px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 517px;
+  box-shadow: 3px 3px 5px #8d8d8d;
+}
+#mainTable{ border: none; }
+#mainTable > table{ border-left : none;}
