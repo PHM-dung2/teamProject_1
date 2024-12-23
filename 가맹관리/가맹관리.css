@@ -83,19 +83,19 @@ td{ background-color: white;}
   box-shadow: 3px 3px 5px #8d8d8d;
 }
 
-#input{ margin-bottom: 10px;}
+#input{ margin-bottom: 5px;}
 
 #point{
   margin-top: 35px;
 }
 h2{
-  height: 50px;
+  height: 30px;
   margin: 20px 0px 10px 0px;
   align-content: center;
 }
 h3{
   height: 30px;
-  margin: 10px 0px;
+  margin: 5px 0px;
 }
 #cc{
   width: 75%;
